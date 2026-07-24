@@ -1,46 +1,62 @@
 import certificates from "../data/certificates";
-import { FaCertificate } from "react-icons/fa";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 function Certificates() {
   return (
     <section
       id="certificates"
-      className="bg-gray-950 py-20 px-6"
+      className="py-24 bg-[#050816]"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-6">
 
-        <h2 className="text-5xl font-bold text-center mb-4">
-          Certificates
+        <h2 className="text-5xl font-bold text-center text-white">
+          Certifications
         </h2>
 
-        <p className="text-center text-gray-400 mb-16">
-          Professional certifications and learning achievements.
+        <p className="text-gray-400 text-center mt-4 mb-16">
+          Certifications that validate my technical knowledge and continuous learning.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-          {certificates.map((item) => (
+          {certificates.map((certificate) => (
 
             <div
-              key={item.id}
-              className="bg-gray-900 rounded-2xl p-8 hover:-translate-y-3 hover:shadow-purple-500/30 hover:shadow-xl duration-300"
+              key={certificate.id}
+              className="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden hover:border-purple-500 hover:shadow-[0_0_35px_rgba(168,85,247,0.4)] transition duration-500"
             >
 
-              <FaCertificate
-                className="text-5xl text-yellow-400 mb-6"
-              />
+              <div className="overflow-hidden">
 
-              <h3 className="text-2xl font-bold">
-                {item.title}
-              </h3>
+                <img
+                  src={certificate.image}
+                  alt={certificate.title}
+                  className="w-full h-52 object-cover group-hover:scale-110 transition duration-700"
+                />
 
-              <p className="text-purple-400 mt-3">
-                {item.issuer}
-              </p>
+              </div>
 
-              <p className="text-gray-400 mt-2">
-                {item.year}
-              </p>
+              <div className="p-6">
+
+                <h3 className="text-xl font-semibold text-white">
+                  {certificate.title}
+                </h3>
+
+                <p className="text-purple-400 mt-2">
+                  {certificate.provider}
+                </p>
+
+                <a
+                  href={certificate.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 mt-6 text-sm bg-purple-600 px-4 py-2 rounded-xl hover:bg-purple-700 transition"
+                >
+                  View Certificate
+                  <FaExternalLinkAlt />
+                </a>
+
+              </div>
 
             </div>
 

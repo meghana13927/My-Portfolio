@@ -1,68 +1,190 @@
 import { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import {
+  FaBars,
+  FaTimes,
+  FaChevronDown,
+} from "react-icons/fa";
 
 function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const links = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Education", href: "#education" },
-    { name: "Experience", href: "#experience" },
-    { name: "Certificates", href: "#certificates" },
-    { name: "Achievements", href: "#achievements" },
-    { name: "Activities", href: "#extracurricular" },
-    { name: "Resume", href: "#resume" },
-    { name: "Contact", href: "#contact" },
-  ];
+  const [menu, setMenu] = useState(false);
+ const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-gray-950/80 backdrop-blur-lg border-b border-gray-800">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <h1 className="text-2xl font-bold text-purple-400">
-          Meghana
-        </h1>
+    <nav className="fixed top-0 left-0 w-full z-50 bg-[#050816]/80 backdrop-blur-xl border-b border-gray-800">
 
-        {/* Desktop Menu */}
-        <ul className="hidden lg:flex items-center gap-6">
-          {links.map((link) => (
-            <li key={link.name}>
-              <a
-                href={link.href}
-                className="text-gray-300 hover:text-purple-400 transition duration-300"
-              >
-                {link.name}
-              </a>
-            </li>
-          ))}
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-8 py-4">
+
+        {/* Logo */}
+
+        <a
+          href="#home"
+          className="text-4xl font-black bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"
+        >
+        
+        </a>
+
+        {/* Desktop */}
+
+        <ul className="hidden lg:flex items-center gap-8">
+
+          <li>
+            <a href="#home" className="hover:text-purple-400 transition">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="#about" className="hover:text-purple-400 transition">
+              About
+            </a>
+          </li>
+
+          <li>
+            <a href="#skills" className="hover:text-purple-400 transition">
+              Skills
+            </a>
+          </li>
+
+          <li>
+            <a href="#projects" className="hover:text-purple-400 transition">
+              Projects
+            </a>
+          </li>
+
+          {/* Dropdown */}
+
+         <li className="relative">
+
+  <button
+    onClick={() => setDropdownOpen(!dropdownOpen)}
+    className="flex items-center gap-2 hover:text-purple-400 transition"
+  >
+    More
+    <FaChevronDown
+      className={`transition-transform duration-300 ${
+        dropdownOpen ? "rotate-180" : ""
+      }`}
+    />
+  </button>
+
+  {dropdownOpen && (
+    <div className="absolute top-12 left-0 w-56 bg-gray-900 border border-gray-700 rounded-xl shadow-2xl overflow-hidden">
+
+      <a
+        href="#education"
+        onClick={() => setDropdownOpen(false)}
+        className="block px-5 py-3 hover:bg-purple-600 transition"
+      >
+        Education
+      </a>
+
+      <a
+        href="#experience"
+        onClick={() => setDropdownOpen(false)}
+        className="block px-5 py-3 hover:bg-purple-600 transition"
+      >
+        Experience
+      </a>
+
+      <a
+        href="#certificates"
+        onClick={() => setDropdownOpen(false)}
+        className="block px-5 py-3 hover:bg-purple-600 transition"
+      >
+        Certificates
+      </a>
+
+      <a
+        href="#achievements"
+        onClick={() => setDropdownOpen(false)}
+        className="block px-5 py-3 hover:bg-purple-600 transition"
+      >
+        Achievements
+      </a>
+
+      <a
+        href="#extracurricular"
+        onClick={() => setDropdownOpen(false)}
+        className="block px-5 py-3 hover:bg-purple-600 transition"
+      >
+        Activities
+      </a>
+
+    </div>
+  )}
+
+</li>
+
+          <li>
+
+            <a
+              href="#resume"
+              className="bg-purple-600 px-5 py-3 rounded-xl hover:bg-purple-700 transition"
+            >
+              Resume
+            </a>
+
+          </li>
+
+          <li>
+
+            <a
+              href="#contact"
+              className="border border-purple-500 px-5 py-3 rounded-xl hover:bg-purple-600 transition"
+            >
+              Contact
+            </a>
+
+          </li>
+
         </ul>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile */}
+
         <button
-          className="lg:hidden text-2xl"
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => setMenu(!menu)}
+          className="lg:hidden text-3xl"
         >
-          {menuOpen ? <FaTimes /> : <FaBars />}
+          {menu ? <FaTimes /> : <FaBars />}
         </button>
+
       </div>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="lg:hidden bg-gray-900 px-6 pb-6">
-          {links.map((link) => (
+
+      {menu && (
+
+        <div className="lg:hidden bg-[#050816] px-8 pb-8">
+
+          {[
+            "home",
+            "about",
+            "skills",
+            "projects",
+            "education",
+            "experience",
+            "certificates",
+            "achievements",
+            "extracurricular",
+            "resume",
+            "contact",
+          ].map((item) => (
+
             <a
-              key={link.name}
-              href={link.href}
-              onClick={() => setMenuOpen(false)}
-              className="block py-3 text-gray-300 hover:text-purple-400"
+              key={item}
+              href={`#${item}`}
+              onClick={() => setMenu(false)}
+              className="block py-4 capitalize border-b border-gray-800 hover:text-purple-400"
             >
-              {link.name}
+              {item}
             </a>
+
           ))}
+
         </div>
+
       )}
+
     </nav>
   );
 }

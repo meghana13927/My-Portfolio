@@ -1,21 +1,27 @@
 const certificates = [
   {
     id: 1,
-    title: "Java Programming",
-    issuer: "Infosys Springboard",
-    year: "2024",
+    title: "Python for Data Science, AI & Development",
+    provider: "IBM",
+    link: "#",
   },
   {
     id: 2,
-    title: "React Development",
-    issuer: "Coursera",
-    year: "2024",
+    title: "Software Security",
+    provider: "IBM",
+    link: "#",
   },
   {
     id: 3,
-    title: "SQL & Database",
-    issuer: "Great Learning",
-    year: "2024",
+    title: "UX/UI Design Specialization",
+    provider: "Coursera",
+    link: "#",
+  },
+  {
+    id: 4,
+    title: "Java with SeleniumAutomation Testing",
+    provider: "Besant Technologies",
+    link: "#",
   },
 ];
 

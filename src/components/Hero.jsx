@@ -1,5 +1,8 @@
 import profile from "../assets/images/image1.jpeg";
 import resume from "../assets/resume/resume1.pdf";
+
+import { TypeAnimation } from "react-type-animation";
+
 import {
   FaGithub,
   FaLinkedin,
@@ -11,69 +14,107 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center bg-gray-950 overflow-hidden"
+      className="relative min-h-screen bg-gray-950 flex items-center overflow-hidden"
     >
-      {/* Background Glow */}
-      <div className="absolute w-96 h-96 bg-purple-600 rounded-full blur-[150px] opacity-20 top-20 left-10"></div>
+      {/* Animated Background */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
 
-      <div className="absolute w-96 h-96 bg-blue-600 rounded-full blur-[150px] opacity-20 bottom-20 right-10"></div>
+        <div className="absolute top-0 left-0 w-96 h-96 bg-purple-600/20 blur-[180px] rounded-full animate-pulse"></div>
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 px-6 items-center relative z-10">
+        <div className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-pink-600/20 blur-[180px] rounded-full animate-pulse"></div>
+
+        <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-cyan-500/10 blur-[160px] rounded-full"></div>
+
+      </div>
+
+     <div className="max-w-[1180px] mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
 
         {/* Left */}
 
         <div>
 
-          <p className="text-purple-400 text-lg">
-            Hello 👋 I'm
-          </p>
+          <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-green-500 bg-green-500/10 text-green-300 mb-8">
 
-          <h1 className="text-5xl md:text-7xl font-black leading-tight mt-3">
-            Meghana
-          </h1>
+            <span className="w-3 h-3 bg-green-400 rounded-full animate-ping"></span>
 
-          <h2 className="mt-5 text-3xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-            Software Developer
-          </h2>
+            Available for Full-Stack Developer Roles
 
-          <p className="text-gray-400 mt-8 leading-8">
-            Passionate about creating modern websites using
-            React, Laravel, Java and MySQL.
-            I enjoy building beautiful, responsive and
-            user-friendly web applications.
-          </p>
-
-          <div className="flex gap-5 mt-10">
-
-          <a
-  href="#projects"
-  className="px-8 py-4 rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 hover:scale-105 transition duration-300 shadow-lg"
->
-  View Projects
-</a>
-
-            <a
-  href={resume}
-  download
-  className="border border-purple-500 px-8 py-4 rounded-xl hover:bg-purple-700 transition duration-300 flex items-center gap-2"
->
-  <FaDownload />
-  Download Resume
-</a>
           </div>
 
-          <div className="flex gap-6 mt-10 text-3xl">
+          <p className="text-xl text-purple-400">
+            Hello, I'm
+          </p>
 
-            <a href="https://github.com/meghana13927">
-              <FaGithub className="hover:text-purple-400 transition" />
+          <h1 className="mt-4 text-6xl lg:text-7xl font-black leading-tight bg-gradient-to-r from-white via-purple-300 to-pink-400 bg-clip-text text-transparent drop-shadow-[0_5px_25px_rgba(168,85,247,0.8)]">
+            Meghana H M
+          </h1>
+
+          <TypeAnimation
+            sequence={[
+              "Full-Stack Web Developer",
+              2000,
+            ]}
+            wrapper="h2"
+            speed={20}
+            repeat={Infinity}
+            className="mt-6 text-3xl lg:text-5xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent"
+          />
+
+          <p className="mt-8 text-lg text-gray-400 leading-8 max-w-xl">
+            Passionate Full-Stack Web Developer specializing in building
+            responsive, scalable, and user-friendly web applications using
+            React, Laravel, Java, MySQL, REST APIs and GraphQL.
+          </p>
+
+          {/* Buttons */}
+
+          <div className="flex flex-wrap gap-5 mt-10">
+
+            <a
+              href="#projects"
+              className="px-8 py-4 rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 hover:scale-105 transition shadow-xl"
+            >
+              View Projects
             </a>
 
-            <a href="https://www.linkedin.com/in/megh13a2/">
-              <FaLinkedin className="hover:text-blue-400 transition" />
+            <a
+              href={resume}
+              download
+              className="flex items-center gap-3 px-8 py-4 rounded-xl border border-purple-500 hover:bg-purple-600 transition"
+            >
+              <FaDownload />
+              Resume
             </a>
 
-            <a href="mailto:meghameghana370@gmail.com">
-              <FaEnvelope className="hover:text-red-400 transition" />
+          </div>
+
+          {/* Social */}
+
+          <div className="flex gap-7 mt-10">
+
+            <a
+              href="https://github.com/meghana13927"
+              target="_blank"
+              rel="noreferrer"
+              className="text-4xl hover:text-purple-400 hover:-translate-y-2 transition"
+            >
+              <FaGithub />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/megh13a2/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-4xl hover:text-blue-400 hover:-translate-y-2 transition"
+            >
+              <FaLinkedin />
+            </a>
+
+            <a
+              href="mailto:meghameghana370@gmail.com"
+              className="text-4xl hover:text-red-400 hover:-translate-y-2 transition"
+            >
+              <FaEnvelope />
             </a>
 
           </div>
@@ -82,23 +123,28 @@ function Hero() {
 
         {/* Right */}
 
-        <div className="flex justify-center">
+       <div className="flex justify-center">
 
-          <div className="relative">
+  <div className="relative group">
 
-            <div className="absolute inset-0 rounded-full bg-purple-600 blur-3xl opacity-30 animate-pulse"></div>
+    {/* Animated Glow */}
+    <div className="absolute -inset-6 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 rounded-full blur-3xl opacity-40 group-hover:opacity-70 transition duration-700 animate-pulse"></div>
 
-           <img
-  src={profile}
-  alt="Profile"
-  className="relative w-80 h-80 md:w-[430px] md:h-[430px] rounded-full object-cover border-4 border-purple-500 shadow-[0_0_60px_rgba(168,85,247,0.6)] hover:scale-105 duration-500 float"
-/>
+    {/* Glass Circle */}
+    <div className="absolute inset-0 rounded-full bg-white/10 backdrop-blur-lg"></div>
 
-          </div>
+    {/* Profile Image */}
+    <img
+      src={profile}
+      alt="Profile"
+      className="relative w-80 h-80 lg:w-[430px] lg:h-[430px] rounded-full object-cover border-4 border-white/20 shadow-2xl transition duration-500 group-hover:scale-105 float"
+    />
 
-        </div>
+  </div>
 
-      </div>
+</div>
+</div>
+
     </section>
   );
 }

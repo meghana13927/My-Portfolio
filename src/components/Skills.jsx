@@ -4,45 +4,57 @@ function Skills() {
   return (
     <section
       id="skills"
-      className="min-h-screen bg-gray-950 py-20 px-6"
+      className="bg-gray-950 py-24 px-6"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
 
-        <h2 className="text-5xl font-bold text-center mb-4">
-          My Skills
+        <h2 className="text-5xl font-bold text-center">
+          Technical Skills
         </h2>
 
-        <p className="text-center text-gray-400 mb-16">
-          Technologies and tools I use to build web applications.
+        <p className="text-center text-gray-400 mt-4 mb-16">
+          Technologies, frameworks and tools I use to build scalable applications.
         </p>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="space-y-12">
 
-          {skills.map((skill) => (
+          {skills.map((category) => (
 
             <div
-              key={skill.name}
-              className="bg-gray-900 rounded-2xl p-6 hover:scale-105 duration-300 shadow-lg"
+              key={category.title}
+              className="bg-gray-900 rounded-3xl p-8 border border-gray-800 hover:border-purple-500 transition"
             >
 
-              <div className="flex justify-between mb-3">
+              <h3 className="text-2xl font-bold text-purple-400 mb-8">
+                {category.title}
+              </h3>
 
-                <h3 className="text-xl font-semibold">
-                  {skill.name}
-                </h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
 
-                <span>
-                  {skill.level}%
-                </span>
+                {category.items.map((skill) => {
 
-              </div>
+                  const Icon = skill.icon;
 
-              <div className="w-full h-3 bg-gray-700 rounded-full">
+                  return (
 
-                <div
-                  className={`${skill.color} h-3 rounded-full`}
-                  style={{ width: `${skill.level}%` }}
-                ></div>
+                    <div
+                      key={skill.name}
+                      className="group bg-gray-950 rounded-2xl p-6 flex flex-col items-center justify-center hover:-translate-y-2 hover:shadow-purple-500/30 hover:shadow-xl transition duration-300"
+                    >
+
+                      <Icon
+                        className={`text-5xl ${skill.color} group-hover:scale-125 transition`}
+                      />
+
+                      <h4 className="mt-5 font-semibold text-center">
+                        {skill.name}
+                      </h4>
+
+                    </div>
+
+                  );
+
+                })}
 
               </div>
 
