@@ -7,7 +7,7 @@ const experience = [
     description:
       "As a Software Developer Intern at Parrophins Pvt. Ltd., I worked on backend web application development using CodeIgniter, PHP, JavaScript, and MySQL. My responsibilities included developing application modules, optimizing database queries, integrating REST APIs, and supporting frontend functionality. I collaborated with senior developers to debug issues, enhance existing features, and ensure the delivery of reliable, scalable, and user-friendly software solutions.",
     technologies: [
-      "CodeIgniters",
+      "CodeIgniter",
       "PHP",
       "MySQL",
       "HTML",

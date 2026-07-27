@@ -1,27 +1,45 @@
+import {
+  FaPalette,
+  FaVideo,
+  FaMusic,
+  FaPlaneDeparture,
+} from "react-icons/fa";
+
 const extracurricular = [
   {
     id: 1,
     title: "Video Editing & UI/UX Design",
+    icon: FaVideo,
+    color: "from-pink-500 to-purple-600",
     description:
-      "Skilled in video editing and creating modern, user-friendly UI/UX designs using Figma. Passionate about designing visually appealing interfaces and engaging digital content.",
+      "Create engaging videos and design modern user interfaces using Figma, focusing on creativity and user experience.",
   },
+
   {
     id: 2,
     title: "Drawing & Painting",
+    icon: FaPalette,
+    color: "from-orange-500 to-red-500",
     description:
-      "Creative artist with a strong interest in drawing and painting, using art as a medium to enhance creativity, attention to detail, and visual storytelling.",
+      "Passionate about sketching and painting, expressing creativity through traditional and digital artwork.",
   },
+
   {
     id: 3,
-    title: "Dance & Cultural Activities",
+    title: "Dance Performer",
+    icon: FaMusic,
+    color: "from-cyan-500 to-blue-600",
     description:
-      "Active member of Kalavaibhava at SDM College, Ujire. Trained and performed in various dance forms including Classical, Western, Garba Dandiya, Kathak, and Bollywood, participating in numerous cultural events and stage performances.",
+      "Performed with Kalavaibhava at SDM College, Ujire. Trained in Classical, Western, Kathak, Garba, Dandiya and Bollywood dance forms.",
   },
+
   {
     id: 4,
-    title: "Travelling & Reading",
+    title: "Travel & Reading",
+    icon: FaPlaneDeparture,
+    color: "from-green-500 to-emerald-600",
     description:
-      "Passionate about exploring new places, cultures, and experiences through travel, while regularly reading books on technology, self-development, and personal growth to broaden knowledge and perspective.",
+      "Enjoy travelling to explore new cultures and reading books that inspire personal growth and continuous learning.",
   },
 ];
 

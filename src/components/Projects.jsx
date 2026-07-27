@@ -1,4 +1,5 @@
 import projects from "../data/projects";
+import { motion } from "framer-motion";
 import {
   FaGithub,
   FaExternalLinkAlt,
@@ -6,10 +7,13 @@ import {
 
 function Projects() {
   return (
-    <section
-      id="projects"
-      className="bg-gray-950 py-24 px-6"
-    >
+   
+<motion.section
+  initial={{ opacity: 0, y: 80 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  viewport={{ once: false }}
+>
       <div className="max-w-7xl mx-auto">
 
         <h2 className="text-5xl font-bold text-center">
@@ -123,7 +127,7 @@ function Projects() {
         </div>
 
       </div>
-    </section>
+    </motion.section>
   );
 }
 

@@ -1,61 +1,210 @@
 import experience from "../data/experience";
+import { motion } from "framer-motion";
+import {
+  FaBriefcase,
+  FaCalendarAlt,
+  FaBuilding,
+  FaCode,
+} from "react-icons/fa";
 
 function Experience() {
   return (
-    <section
+    <motion.section
       id="experience"
-      className="bg-gray-900 py-20 px-6"
+      className="py-24 bg-gray-950 px-6"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: false }}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
 
-        <h2 className="text-5xl font-bold text-center mb-5">
-          Experience
-        </h2>
+        {/* Heading */}
 
-        <p className="text-center text-gray-400 mb-16">
-          My professional journey.
-        </p>
+        <div className="text-center mb-20">
 
-        {experience.map((item) => (
+          <h2 className="text-5xl md:text-6xl font-bold">
+            Experience
+          </h2>
 
-          <div
-            key={item.id}
-            className="bg-gray-950 rounded-2xl p-8 border border-gray-800 hover:border-purple-500 hover:shadow-xl hover:shadow-purple-500/20 transition duration-300 mb-8"
-          >
+          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-400 mx-auto mt-5 rounded-full"></div>
 
-            <h3 className="text-3xl font-bold">
-              {item.role}
-            </h3>
+          <p className="text-gray-400 mt-6 max-w-3xl mx-auto text-lg">
+            My professional journey in software development,
+            backend engineering, and quality assurance.
+          </p>
 
-            <p className="text-purple-400 mt-2">
-              {item.company}
-            </p>
+        </div>
 
-            <p className="text-gray-500 mt-1">
-              {item.duration}
-            </p>
+        {/* Timeline */}
 
-            <p className="text-gray-300 mt-6 leading-8">
-              {item.description}
-            </p>
+        <div className="relative">
 
-            <div className="flex flex-wrap gap-3 mt-6">
-              {item.technologies.map((tech) => (
-                <span
-                  key={tech}
-                  className="bg-purple-600 px-4 py-2 rounded-full text-sm"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
+          {/* Vertical Line */}
 
-          </div>
+          <div className="absolute left-6 top-0 w-1 h-full bg-gradient-to-b from-purple-500 via-cyan-500 to-pink-500 rounded-full"></div>
 
-        ))}
+          {experience.map((item, index) => (
+
+            <motion.div
+              key={item.id}
+              initial={{
+                opacity: 0,
+                x: index % 2 === 0 ? -80 : 80,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+              transition={{
+                duration: 0.7,
+                delay: index * 0.2,
+              }}
+              viewport={{ once: false }}
+              className="relative pl-20 mb-16"
+            >
+
+              {/* Timeline Icon */}
+
+              <div
+                className="absolute left-0 top-8
+                w-12 h-12 rounded-full
+                bg-gradient-to-r
+                from-purple-600
+                to-cyan-500
+                flex items-center justify-center
+                shadow-lg shadow-purple-500/40"
+              >
+
+                <FaBriefcase className="text-white text-lg" />
+
+              </div>
+
+              {/* Card */}
+
+              <div
+                className="
+                group
+                bg-white/5
+                backdrop-blur-xl
+                border
+                border-white/10
+                rounded-3xl
+                p-8
+                hover:border-purple-500
+                hover:-translate-y-2
+                hover:shadow-[0_20px_60px_rgba(168,85,247,0.25)]
+                transition-all
+                duration-500"
+              >
+
+                {/* Top */}
+
+                <div className="flex flex-wrap justify-between gap-4">
+
+                  <div>
+
+                    <h3 className="text-3xl font-bold group-hover:text-purple-400 transition">
+
+                      {item.role}
+
+                    </h3>
+
+                    <div className="flex items-center gap-2 mt-3 text-cyan-300">
+
+                      <FaBuilding />
+
+                      <span>{item.company}</span>
+
+                    </div>
+
+                  </div>
+
+                  <span
+                    className="
+                    flex items-center
+                    gap-2
+                    bg-purple-600/20
+                    text-purple-300
+                    px-4
+                    py-2
+                    rounded-full
+                    text-sm"
+                  >
+
+                    <FaCalendarAlt />
+
+                    {item.duration}
+
+                  </span>
+
+                </div>
+
+                {/* Description */}
+
+                <p className="text-gray-300 leading-8 mt-8">
+
+                  {item.description}
+
+                </p>
+
+                {/* Tech */}
+
+                <div className="mt-8">
+
+                  <div className="flex items-center gap-2 mb-4 text-purple-300">
+
+                    <FaCode />
+
+                    <span className="font-semibold">
+
+                      Technologies Used
+
+                    </span>
+
+                  </div>
+
+                  <div className="flex flex-wrap gap-3">
+
+                    {item.technologies.map((tech) => (
+
+                      <span
+                        key={tech}
+                        className="
+                        px-4
+                        py-2
+                        rounded-xl
+                        bg-gray-900
+                        border
+                        border-gray-700
+                        text-sm
+                        text-gray-300
+                        hover:bg-purple-600
+                        hover:border-purple-500
+                        hover:text-white
+                        duration-300"
+                      >
+
+                        {tech}
+
+                      </span>
+
+                    ))}
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </motion.div>
+
+          ))}
+
+        </div>
 
       </div>
-    </section>
+    </motion.section>
   );
 }
 
