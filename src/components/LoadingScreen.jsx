@@ -186,33 +186,7 @@ function LoadingScreen() {
   }}
   className="mt-12 text-6xl lg:text-7xl font-black bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent"
 >
-  Meghana H M
-</motion.h1><motion.h1
-  initial={{
-    opacity: 0,
-    y: 60,
-    scale: 0.8,
-  }}
-  animate={{
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    textShadow: [
-      "0 0 10px #9333ea",
-      "0 0 35px #22d3ee",
-      "0 0 60px #ec4899",
-      "0 0 35px #22d3ee",
-    ],
-  }}
-  transition={{
-    duration: 2,
-    textShadow: {
-      repeat: Infinity,
-      duration: 3,
-    },
-  }}
-  className="mt-12 text-6xl lg:text-7xl font-black bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent"
->
+ 
   Meghana H M
 </motion.h1>
 
