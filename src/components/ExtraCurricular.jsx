@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 
 const imageMap = {
-  "Video Editing & UI/UX Design": "/photos/creative-work.png",
+  "Video Editing & UI/UX Design": "/photos/creative-work-tools.png",
   "Drawing & Painting": "/photos/drawing-painting.png",
   "Dance Performer": "/photos/dance-cultural.png",
   "Travel & Reading": "/photos/books-reading.png",
@@ -48,7 +48,7 @@ function ExtraCurricular() {
         <div className="grid gap-8 lg:grid-cols-2">
           {extracurricular.map((item, index) => {
             const Icon = item.icon;
-            const image = imageMap[item.title] ?? "/photos/creative-work.png";
+            const image = imageMap[item.title] ?? "/photos/creative-work-tools.png";
 
             return (
               <motion.div

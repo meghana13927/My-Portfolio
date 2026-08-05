@@ -1,6 +1,12 @@
 ﻿import experience from "../data/experience";
 import { motion } from "framer-motion";
-import { FaBriefcase, FaBuilding, FaCalendarAlt, FaCode } from "react-icons/fa";
+import { FaBriefcase, FaBuilding, FaCalendarAlt, FaCode, FaLayerGroup, FaRocket } from "react-icons/fa";
+
+const highlights = [
+  { label: "Roles", value: "3", icon: FaBriefcase },
+  { label: "Core Focus", value: "Backend + Full Stack", icon: FaLayerGroup },
+  { label: "Current Stage", value: "Building in production", icon: FaRocket },
+];
 
 function Experience() {
   return (
@@ -9,22 +15,38 @@ function Experience() {
         <div className="section-heading">
           <span className="section-eyebrow">Experience</span>
           <h2 className="mt-5">
-            Work experience presented with <span className="accent-text">more personality and clarity</span>
+            Work experience with <span className="accent-text">clear structure and depth</span>
           </h2>
           <p>
-            My experience combines backend development, integrations, and full-stack product work across practical business use cases.
+            My experience spans development and quality, helping me build reliable applications while understanding both product implementation and software standards.
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-[0.34fr_0.66fr]">
-          <div className="pro-card panel-3d tilt-flat rounded-[2rem] overflow-hidden">
-            <img src="/illustrations/coding.svg" alt="Coding illustration" className="h-64 w-full object-cover" />
-            <div className="p-8">
-              <h3 className="text-3xl font-bold text-slate-900">Professional Journey</h3>
+        <div className="grid gap-8 lg:grid-cols-[0.36fr_0.64fr]">
+          <div className="space-y-6">
+            <div className="pro-card panel-3d tilt-flat rounded-[2rem] p-8">
+              <h3 className="text-3xl font-bold text-slate-900">Experience Snapshot</h3>
               <p className="mt-4 leading-8 text-slate-600">
-                I enjoy solving real development problems, improving system quality, and building features that support both users and businesses.
+                I have worked across software development, testing, backend systems, integrations, and business-focused web solutions. That mix gives me a practical view of both product quality and implementation detail.
               </p>
             </div>
+
+            {highlights.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.label} className="pro-card panel-3d tilt-right rounded-[1.75rem] p-6">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-100 text-teal-700">
+                      <Icon />
+                    </div>
+                    <div>
+                      <p className="text-sm uppercase tracking-[0.16em] text-slate-500">{item.label}</p>
+                      <p className="mt-1 font-semibold text-slate-900">{item.value}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
           <div className="space-y-8">
@@ -73,4 +95,3 @@ function Experience() {
 }
 
 export default Experience;
-

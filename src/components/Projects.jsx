@@ -9,10 +9,10 @@ function Projects() {
         <div className="section-heading">
           <span className="section-eyebrow">Projects</span>
           <h2 className="mt-5">
-            Selected work with a <span className="accent-text">strong product feel</span>
+            Real work from my <span className="accent-text">GitHub portfolio</span>
           </h2>
           <p>
-            These projects show how I combine clean implementation, backend thinking, and interface presentation to create complete applications.
+            These project cards are now aligned to the repositories on my GitHub account, with visuals that match the type of product each repository represents.
           </p>
         </div>
 
@@ -27,6 +27,10 @@ function Projects() {
               viewport={{ once: true }}
               whileHover={{ y: -8 }}
             >
+              <a href={project.demo} target="_blank" rel="noreferrer" className="block overflow-hidden">
+                <img src={project.image} alt={project.title} className="h-56 w-full object-cover transition duration-700 hover:scale-105" />
+              </a>
+
               <div className="h-2 bg-gradient-to-r from-teal-500 via-sky-400 to-amber-300" />
               <div className="flex h-full flex-col p-8">
                 <div className="flex items-center justify-between gap-4">
@@ -53,7 +57,7 @@ function Projects() {
                     Source Code
                   </a>
                   <a href={project.demo} target="_blank" rel="noreferrer" className="button-primary text-sm">
-                    Live Preview
+                    View Project
                     <FaExternalLinkAlt />
                   </a>
                 </div>
