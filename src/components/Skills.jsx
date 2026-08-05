@@ -15,7 +15,7 @@ function Skills() {
           </p>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-8 section-float">
           {skills.map((category, index) => (
             <motion.div
               key={category.title}
@@ -57,3 +57,4 @@ function Skills() {
 }
 
 export default Skills;
+

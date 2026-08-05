@@ -16,7 +16,7 @@ function Achievements() {
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-2 [perspective:1600px]">
           {achievements.map((item, index) => (
             <motion.div
               key={item.id}
@@ -40,3 +40,4 @@ function Achievements() {
 }
 
 export default Achievements;
+

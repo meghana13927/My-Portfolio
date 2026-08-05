@@ -36,7 +36,7 @@ function Contact() {
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] [perspective:1600px]">
           <motion.div className="space-y-6" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             {contactCards.map((card) => (
               <div key={card.title} className="pro-card panel-3d tilt-flat rounded-[1.75rem] p-6">
@@ -85,4 +85,5 @@ function Contact() {
 }
 
 export default Contact;
+
 

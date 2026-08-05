@@ -16,8 +16,8 @@ function Education() {
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-[0.68fr_0.32fr]">
-          <div className="space-y-8">
+        <div className="grid gap-8 lg:grid-cols-[0.68fr_0.32fr] [perspective:1600px]">
+          <div className="space-y-8 section-float">
             {education.map((item, index) => (
               <motion.div
                 key={item.id}
@@ -52,7 +52,7 @@ function Education() {
             ))}
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-8 section-float">
             <div className="pro-card panel-3d tilt-flat overflow-hidden rounded-[2rem]">
               <img src="/illustrations/reading.svg" alt="Reading illustration" className="h-56 w-full object-cover" />
               <div className="p-7">
@@ -78,4 +78,5 @@ function Education() {
 }
 
 export default Education;
+
 

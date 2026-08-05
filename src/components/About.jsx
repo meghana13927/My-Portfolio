@@ -42,7 +42,7 @@ function About() {
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-[1.08fr_0.92fr]">
+        <div className="grid gap-8 lg:grid-cols-[1.08fr_0.92fr] [perspective:1600px]">
           <motion.div className="pro-card panel-3d tilt-flat rounded-[2rem] p-8 md:p-10" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="inline-flex rounded-full bg-orange-50 px-4 py-2 text-sm font-semibold text-orange-700">
               Full Stack Developer from Bangalore
@@ -100,4 +100,5 @@ function About() {
 }
 
 export default About;
+
 

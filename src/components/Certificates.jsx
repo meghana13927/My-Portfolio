@@ -16,7 +16,7 @@ function Certificates() {
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4 [perspective:1600px]">
           {certificates.map((certificate, index) => (
             <motion.div
               key={certificate.id}
@@ -56,3 +56,4 @@ function Certificates() {
 }
 
 export default Certificates;
+

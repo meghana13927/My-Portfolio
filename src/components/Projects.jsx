@@ -16,7 +16,7 @@ function Projects() {
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3 [perspective:1600px]">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -71,3 +71,4 @@ function Projects() {
 }
 
 export default Projects;
+

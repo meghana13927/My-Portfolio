@@ -67,28 +67,51 @@ h6 {
 .section-shell {
   position: relative;
   overflow: hidden;
+  perspective: 1800px;
+}
+
+.section-shell::before,
+.section-shell::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  border-radius: 999px;
+  filter: blur(80px);
+  opacity: 0.8;
 }
 
 .section-shell::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 12% 18%, rgba(125, 211, 252, 0.16), transparent 18%),
-    radial-gradient(circle at 84% 22%, rgba(94, 234, 212, 0.12), transparent 16%),
-    radial-gradient(circle at 54% 86%, rgba(251, 191, 36, 0.08), transparent 18%);
+  inset: auto;
+  top: 10%;
+  left: -4rem;
+  width: 12rem;
+  height: 12rem;
+  background: radial-gradient(circle, rgba(125, 211, 252, 0.36), transparent 68%);
+  animation: orbDriftLeft 14s ease-in-out infinite;
+}
+
+.section-shell::after {
+  right: -3rem;
+  bottom: 8%;
+  width: 10rem;
+  height: 10rem;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.3), transparent 68%);
+  animation: orbDriftRight 16s ease-in-out infinite;
 }
 
 .section-heading {
+  position: relative;
+  z-index: 1;
   text-align: center;
   margin-bottom: 4.5rem;
+  transform-style: preserve-3d;
 }
 
 .section-heading h2 {
   font-size: clamp(2.5rem, 4vw, 4.25rem);
   font-weight: 800;
   letter-spacing: -0.04em;
+  animation: headingFloat 8s ease-in-out infinite;
 }
 
 .section-heading p {
@@ -97,6 +120,7 @@ h6 {
   color: var(--text-soft);
   font-size: 1.05rem;
   line-height: 1.9;
+  transform: translateZ(10px);
 }
 
 .section-eyebrow {
@@ -108,6 +132,7 @@ h6 {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: #0f766e;
+  animation: floatSlow 9s ease-in-out infinite;
 }
 
 .section-eyebrow::before,
@@ -147,17 +172,17 @@ h6 {
 }
 
 .pro-card:hover {
-  transform: translateY(-10px) rotateX(4deg) rotateY(-4deg);
+  transform: translateY(-12px) rotateX(6deg) rotateY(-6deg) scale(1.01);
   border-color: var(--surface-border-strong);
   box-shadow: var(--shadow-strong);
 }
 
 .tilt-right:hover {
-  transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+  transform: translateY(-12px) rotateX(6deg) rotateY(7deg) scale(1.01);
 }
 
 .tilt-flat:hover {
-  transform: translateY(-8px) rotateX(3deg) rotateY(0deg);
+  transform: translateY(-10px) rotateX(5deg) rotateY(0deg) scale(1.01);
 }
 
 .panel-3d {
@@ -165,7 +190,11 @@ h6 {
 }
 
 .panel-3d > * {
-  transform: translateZ(10px);
+  transform: translateZ(16px);
+}
+
+.section-float {
+  animation: sectionFloat 9s ease-in-out infinite;
 }
 
 .float-slow {
@@ -175,6 +204,26 @@ h6 {
 @keyframes floatSlow {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
   50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+@keyframes sectionFloat {
+  0%, 100% { transform: translateY(0px) rotateX(0deg); }
+  50% { transform: translateY(-8px) rotateX(2deg); }
+}
+
+@keyframes orbDriftLeft {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(3rem, 1.5rem, 0) scale(1.18); }
+}
+
+@keyframes orbDriftRight {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-3rem, -1.5rem, 0) scale(1.16); }
+}
+
+@keyframes headingFloat {
+  0%, 100% { transform: translateY(0) translateZ(0); }
+  50% { transform: translateY(-4px) translateZ(18px); }
 }
 
 .button-primary {

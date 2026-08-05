@@ -13,7 +13,7 @@ function Resume() {
     <motion.section id="resume" className="section-shell px-6 py-28 lg:px-8" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
       <div className="mx-auto max-w-6xl">
         <div className="pro-card panel-3d tilt-flat rounded-[2.25rem] p-8 md:p-12">
-          <div className="grid items-center gap-10 lg:grid-cols-[1fr_0.7fr]">
+          <div className="grid items-center gap-10 lg:grid-cols-[1fr_0.7fr] [perspective:1600px]">
             <div>
               <span className="section-eyebrow">Resume</span>
               <h2 className="mt-5 text-4xl font-extrabold leading-tight text-slate-900 md:text-5xl">
@@ -58,3 +58,4 @@ function Resume() {
 }
 
 export default Resume;
+

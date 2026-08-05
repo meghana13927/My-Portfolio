@@ -22,7 +22,7 @@ function Experience() {
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-[0.36fr_0.64fr]">
+        <div className="grid gap-8 lg:grid-cols-[0.36fr_0.64fr] [perspective:1600px]">
           <div className="space-y-6">
             <div className="pro-card panel-3d tilt-flat rounded-[2rem] p-8">
               <h3 className="text-3xl font-bold text-slate-900">Experience Snapshot</h3>
@@ -49,7 +49,7 @@ function Experience() {
             })}
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-8 section-float">
             {experience.map((item, index) => (
               <motion.div
                 key={item.id}
@@ -95,3 +95,4 @@ function Experience() {
 }
 
 export default Experience;
+

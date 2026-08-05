@@ -45,7 +45,7 @@ function ExtraCurricular() {
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="grid gap-8 lg:grid-cols-2 [perspective:1600px]">
           {extracurricular.map((item, index) => {
             const Icon = item.icon;
             const image = imageMap[item.title] ?? "/photos/creative-work-tools.png";
@@ -103,3 +103,4 @@ function ExtraCurricular() {
 }
 
 export default ExtraCurricular;
+
