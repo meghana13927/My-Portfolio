@@ -9,19 +9,19 @@ function Education() {
         <div className="section-heading">
           <span className="section-eyebrow">Education</span>
           <h2 className="mt-5">
-            Academic achievements with a <span className="accent-text">more visual presentation</span>
+            Academic foundations with <span className="accent-text">clarity and credibility</span>
           </h2>
           <p>
-            My academic path built the technical discipline, consistency, and curiosity that continue to shape my work as a developer.
+            My academic journey built the technical discipline, consistency, and learning mindset that still shape the way I approach software work today.
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-[0.68fr_0.32fr] [perspective:1600px]">
+        <div className="grid gap-8 lg:grid-cols-[0.7fr_0.3fr] [perspective:1800px]">
           <div className="space-y-8 section-float">
             {education.map((item, index) => (
               <motion.div
                 key={item.id}
-                className="pro-card panel-3d tilt-right rounded-[2rem] p-8"
+                className="pro-card panel-3d tilt-right rounded-[2.2rem] p-8"
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.08 }}
@@ -29,21 +29,21 @@ function Education() {
               >
                 <div className="flex flex-wrap items-start justify-between gap-5">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-r from-amber-400 to-orange-400 text-2xl text-white shadow-lg">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-cyan-400/12 text-2xl text-cyan-200 shadow-lg">
                       <FaGraduationCap />
                     </div>
                     <div>
-                      <p className="text-sm font-bold uppercase tracking-[0.16em] text-sky-700">Academic Stage {String(index + 1).padStart(2, "0")}</p>
-                      <h3 className="mt-3 text-3xl font-bold text-slate-900">{item.degree}</h3>
-                      <p className="mt-3 text-lg text-slate-600">{item.college}</p>
+                      <p className="text-sm font-bold uppercase tracking-[0.16em] text-cyan-200">Academic Stage {String(index + 1).padStart(2, "0")}</p>
+                      <h3 className="mt-3 text-3xl font-bold text-slate-50">{item.degree}</h3>
+                      <p className="mt-3 text-lg text-slate-300">{item.college}</p>
                     </div>
                   </div>
 
                   <div className="space-y-3 text-sm font-semibold">
-                    <div className="rounded-full bg-sky-50 px-4 py-2 text-sky-700">
+                    <div className="glass-chip rounded-full px-4 py-2 text-cyan-100">
                       <span className="inline-flex items-center gap-2"><FaCalendarAlt /> {item.year}</span>
                     </div>
-                    <div className="rounded-full bg-emerald-50 px-4 py-2 text-emerald-700">
+                    <div className="metric-badge rounded-full px-4 py-2 text-teal-100">
                       <span className="inline-flex items-center gap-2"><FaAward /> {item.score}</span>
                     </div>
                   </div>
@@ -54,17 +54,17 @@ function Education() {
 
           <div className="space-y-8 section-float">
             <div className="pro-card panel-3d tilt-flat overflow-hidden rounded-[2rem]">
-              <img src="/illustrations/reading.svg" alt="Reading illustration" className="h-56 w-full object-cover" />
+              <img src="/illustrations/reading.svg" alt="Learning illustration" className="h-56 w-full object-cover" />
               <div className="p-7">
-                <h3 className="text-2xl font-bold text-slate-900">Learning Mindset</h3>
-                <p className="mt-3 leading-7 text-slate-600">
-                  Education gave me more than grades. It strengthened my focus, learning habit, and ability to grow quickly in technical environments.
+                <h3 className="text-2xl font-bold text-slate-50">Learning Mindset</h3>
+                <p className="mt-3 leading-7 text-slate-300">
+                  Education gave me more than grades. It built focus, structured thinking, and the ability to learn quickly in technical environments.
                 </p>
               </div>
             </div>
             <div className="pro-card panel-3d tilt-flat rounded-[2rem] p-7">
-              <h3 className="text-2xl font-bold text-slate-900">What It Built</h3>
-              <ul className="mt-4 space-y-3 text-slate-600">
+              <h3 className="text-2xl font-bold text-slate-50">What It Built</h3>
+              <ul className="mt-4 space-y-3 text-slate-300">
                 <li>Strong problem-solving approach</li>
                 <li>Clear foundation in software concepts</li>
                 <li>Consistency, discipline, and curiosity</li>
@@ -78,5 +78,3 @@ function Education() {
 }
 
 export default Education;
-
-

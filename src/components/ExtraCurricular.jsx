@@ -38,14 +38,14 @@ function ExtraCurricular() {
         <div className="section-heading">
           <span className="section-eyebrow">Activities</span>
           <h2 className="mt-5">
-            Personal interests that add <span className="accent-text">creativity and balance</span>
+            A creative side that brings <span className="accent-text">range and balance</span>
           </h2>
           <p>
-            Outside development, these cultural and creative interests help me stay inspired and bring a more thoughtful energy into my work.
+            Outside software, these interests help me stay inspired, visually aware, and grounded, which carries back into the products I build.
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-2 [perspective:1600px]">
+        <div className="grid gap-8 lg:grid-cols-2 [perspective:1800px]">
           {extracurricular.map((item, index) => {
             const Icon = item.icon;
             const image = imageMap[item.title] ?? "/photos/creative-work-tools.png";
@@ -59,7 +59,7 @@ function ExtraCurricular() {
                 transition={{ delay: index * 0.08 }}
                 viewport={{ once: true }}
               >
-                <div className="h-64 overflow-hidden bg-slate-100">
+                <div className="h-64 overflow-hidden bg-slate-950/30">
                   <img src={image} alt={item.title} className="h-full w-full object-cover transition duration-700 hover:scale-105" />
                 </div>
                 <div className="p-8">
@@ -68,18 +68,18 @@ function ExtraCurricular() {
                       <Icon />
                     </div>
                     <div>
-                      <p className="text-sm font-bold uppercase tracking-[0.16em] text-teal-700">Creative Side</p>
-                      <h3 className="mt-1 text-3xl font-bold text-slate-900">{item.title}</h3>
+                      <p className="text-sm font-bold uppercase tracking-[0.16em] text-cyan-200">Creative Side</p>
+                      <h3 className="mt-1 text-3xl font-bold text-slate-50">{item.title}</h3>
                     </div>
                   </div>
-                  <p className="mt-5 leading-8 text-slate-600">{item.description}</p>
+                  <p className="mt-5 leading-8 text-slate-300">{item.description}</p>
                 </div>
               </motion.div>
             );
           })}
         </div>
 
-        <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4 [perspective:1800px]">
           {featureCards.map((card, index) => (
             <motion.div
               key={card.title}
@@ -91,8 +91,8 @@ function ExtraCurricular() {
             >
               <img src={card.image} alt={card.title} className="h-48 w-full object-cover" />
               <div className="p-6">
-                <h3 className="text-2xl font-bold text-slate-900">{card.title}</h3>
-                <p className="mt-3 text-slate-600">{card.text}</p>
+                <h3 className="text-2xl font-bold text-slate-50">{card.title}</h3>
+                <p className="mt-3 text-slate-300">{card.text}</p>
               </div>
             </motion.div>
           ))}
@@ -103,4 +103,3 @@ function ExtraCurricular() {
 }
 
 export default ExtraCurricular;
-

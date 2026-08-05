@@ -9,14 +9,14 @@ function Certificates() {
         <div className="section-heading">
           <span className="section-eyebrow">Certificates</span>
           <h2 className="mt-5">
-            Learning progress shown in a <span className="accent-text">cleaner and brighter way</span>
+            Continuous learning shown through <span className="accent-text">credible proof points</span>
           </h2>
           <p>
-            These certifications reflect my commitment to learning, improving, and staying ready for practical software work.
+            These certifications reflect how I keep strengthening my technical base while staying ready for practical, production-oriented software work.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4 [perspective:1600px]">
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4 [perspective:1800px]">
           {certificates.map((certificate, index) => (
             <motion.div
               key={certificate.id}
@@ -25,22 +25,21 @@ function Certificates() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.08 }}
               viewport={{ once: true }}
-              whileHover={{ y: -8 }}
             >
               <div className="relative h-56 overflow-hidden">
                 <img src={certificate.image} alt={certificate.title} className="h-full w-full object-cover transition duration-500 hover:scale-105" />
-                <div className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-teal-700 shadow-md">
+                <div className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-slate-950/75 text-cyan-200 shadow-md">
                   <FaCertificate />
                 </div>
               </div>
 
               <div className="p-7">
-                <span className="inline-flex items-center gap-2 rounded-full bg-sky-50 px-3 py-2 text-xs font-semibold text-sky-700">
+                <span className="glass-chip inline-flex items-center gap-2 rounded-full px-3 py-2 text-xs font-semibold text-cyan-100">
                   <FaAward />
                   Certified
                 </span>
-                <h3 className="mt-5 text-2xl font-bold text-slate-900">{certificate.title}</h3>
-                <p className="mt-3 text-teal-700">{certificate.provider}</p>
+                <h3 className="mt-5 text-2xl font-bold text-slate-50">{certificate.title}</h3>
+                <p className="mt-3 text-teal-200">{certificate.provider}</p>
                 <p className="mt-2 text-sm text-slate-500">{certificate.year}</p>
                 <a href={certificate.link} target="_blank" rel="noreferrer" className="button-secondary mt-7 text-sm">
                   View Certificate
@@ -56,4 +55,3 @@ function Certificates() {
 }
 
 export default Certificates;
-

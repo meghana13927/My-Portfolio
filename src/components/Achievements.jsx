@@ -9,14 +9,14 @@ function Achievements() {
         <div className="section-heading">
           <span className="section-eyebrow">Achievements</span>
           <h2 className="mt-5">
-            Milestones presented with <span className="accent-text">more warmth and energy</span>
+            Milestones that reflect <span className="accent-text">momentum, curiosity, and consistency</span>
           </h2>
           <p>
-            These achievements reflect steady effort, curiosity, and the motivation to keep learning and growing.
+            These achievements show the discipline behind my learning journey and the drive I bring to growth in both academics and technology.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 [perspective:1600px]">
+        <div className="grid gap-8 md:grid-cols-2 [perspective:1800px]">
           {achievements.map((item, index) => (
             <motion.div
               key={item.id}
@@ -26,11 +26,11 @@ function Achievements() {
               transition={{ delay: index * 0.08 }}
               viewport={{ once: true }}
             >
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-100 text-2xl text-amber-600">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-300/12 text-2xl text-amber-100">
                 <FaTrophy />
               </div>
-              <h3 className="mt-6 text-2xl font-bold text-slate-900">{item.title}</h3>
-              <p className="mt-4 leading-7 text-slate-600">{item.description}</p>
+              <h3 className="mt-6 text-2xl font-bold text-slate-50">{item.title}</h3>
+              <p className="mt-4 leading-7 text-slate-300">{item.description}</p>
             </motion.div>
           ))}
         </div>
@@ -40,4 +40,3 @@ function Achievements() {
 }
 
 export default Achievements;
-
