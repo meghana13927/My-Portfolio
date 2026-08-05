@@ -1,109 +1,54 @@
 import education from "../data/education";
 import { motion } from "framer-motion";
-import { FaGraduationCap, FaCalendarAlt, FaAward } from "react-icons/fa";
+import { FaAward, FaCalendarAlt, FaGraduationCap } from "react-icons/fa";
 
 function Education() {
   return (
-    <motion.section
-      id="education"
-      className="py-24 bg-gray-900 px-6"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: false }}
-    >
-      <div className="max-w-6xl mx-auto">
-
-        {/* Heading */}
-
-        <div className="text-center mb-20">
-
-          <h2 className="text-5xl md:text-6xl font-bold">
-            Education
+    <motion.section id="education" className="section-shell px-6 py-28 lg:px-8" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
+      <div className="mx-auto max-w-6xl">
+        <div className="section-heading">
+          <span className="section-eyebrow">Education</span>
+          <h2 className="mt-5">
+            Academic foundations with <span className="accent-text">consistent performance</span>
           </h2>
-
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-400 mx-auto mt-5 rounded-full"></div>
-
-          <p className="text-gray-400 mt-6 text-lg max-w-2xl mx-auto">
-            My academic journey that built a strong foundation in software development,
-            programming, and problem-solving.
+          <p>
+            My education built a strong base in software development, problem-solving, and disciplined execution that continues to shape my work.
           </p>
-
         </div>
 
-        {/* Timeline */}
-
-        <div className="relative">
-
-          {/* Vertical Line */}
-
-          <div className="absolute left-6 top-0 w-1 h-full bg-gradient-to-b from-purple-500 via-cyan-500 to-pink-500 rounded-full"></div>
-
+        <div className="space-y-8">
           {education.map((item, index) => (
-
             <motion.div
               key={item.id}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -80 : 80 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, delay: index * 0.2 }}
-              viewport={{ once: false }}
-              className="relative pl-20 mb-14"
+              className="pro-card rounded-[2rem] p-8"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.08 }}
+              viewport={{ once: true }}
             >
-
-              {/* Timeline Dot */}
-
-              <div className="absolute left-0 top-6 w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-cyan-500 flex items-center justify-center shadow-lg shadow-purple-500/40">
-
-                <FaGraduationCap className="text-white text-xl" />
-
-              </div>
-
-              {/* Card */}
-
-              <div className="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-purple-500 hover:shadow-[0_20px_60px_rgba(168,85,247,0.3)] hover:-translate-y-2 transition-all duration-500">
-
-                {/* Year */}
-
-                <div className="flex justify-between items-center flex-wrap gap-4">
-
-                  <span className="flex items-center gap-2 bg-purple-600/20 text-purple-300 px-4 py-2 rounded-full text-sm">
-
-                    <FaCalendarAlt />
-
-                    {item.year}
-
-                  </span>
-
-                  <span className="flex items-center gap-2 bg-cyan-600/20 text-cyan-300 px-4 py-2 rounded-full text-sm">
-
-                    <FaAward />
-
-                    {item.score}
-
-                  </span>
-
+              <div className="flex flex-wrap items-start justify-between gap-4">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-sky-400/10 text-2xl text-sky-300">
+                    <FaGraduationCap />
+                  </div>
+                  <div>
+                    <h3 className="text-3xl font-bold text-slate-50">{item.degree}</h3>
+                    <p className="mt-3 text-lg text-slate-300">{item.college}</p>
+                  </div>
                 </div>
 
-                <h3 className="text-3xl font-bold mt-6 group-hover:text-purple-400 transition">
-
-                  {item.degree}
-
-                </h3>
-
-                <p className="text-gray-300 mt-4 text-lg">
-
-                  {item.college}
-
-                </p>
-
+                <div className="space-y-3 text-sm font-semibold">
+                  <div className="rounded-full border border-slate-700/70 bg-slate-950/55 px-4 py-2 text-slate-300">
+                    <span className="inline-flex items-center gap-2"><FaCalendarAlt className="text-sky-300" /> {item.year}</span>
+                  </div>
+                  <div className="rounded-full border border-amber-300/20 bg-amber-300/10 px-4 py-2 text-amber-100">
+                    <span className="inline-flex items-center gap-2"><FaAward /> {item.score}</span>
+                  </div>
+                </div>
               </div>
-
             </motion.div>
-
           ))}
-
         </div>
-
       </div>
     </motion.section>
   );

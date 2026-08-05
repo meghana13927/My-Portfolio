@@ -1,139 +1,55 @@
 import certificates from "../data/certificates";
 import { motion } from "framer-motion";
-import {
-  FaExternalLinkAlt,
-  FaCertificate,
-  FaAward,
-} from "react-icons/fa";
+import { FaAward, FaCertificate, FaExternalLinkAlt } from "react-icons/fa";
 
 function Certificates() {
   return (
-    <motion.section
-      id="certificates"
-      className="py-24 bg-gray-900 px-6"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: false }}
-    >
-      <div className="max-w-7xl mx-auto">
-
-        {/* Heading */}
-
-        <div className="text-center mb-20">
-
-          <h2 className="text-5xl md:text-6xl font-bold">
-            Certifications
+    <motion.section id="certificates" className="section-shell px-6 py-28 lg:px-8" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
+      <div className="mx-auto max-w-7xl">
+        <div className="section-heading">
+          <span className="section-eyebrow">Certificates</span>
+          <h2 className="mt-5">
+            Proof of <span className="accent-text">continuous learning</span>
           </h2>
-
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-400 mx-auto mt-5 rounded-full"></div>
-
-          <p className="text-gray-400 mt-6 text-lg max-w-3xl mx-auto">
-            Professional certifications that demonstrate my continuous learning,
-            technical expertise, and commitment to building high-quality software.
+          <p>
+            These certifications reflect my commitment to growing across technical areas and staying ready for real-world software challenges.
           </p>
-
         </div>
 
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
-
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
           {certificates.map((certificate, index) => (
-
             <motion.div
               key={certificate.id}
-              initial={{
-                opacity: 0,
-                y: 80,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.15,
-              }}
-              viewport={{ once: false }}
-              whileHover={{
-                y: -12,
-              }}
-              className="group relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-purple-500 hover:shadow-[0_20px_60px_rgba(168,85,247,0.35)] duration-500"
+              className="pro-card overflow-hidden rounded-[2rem]"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.08 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -8 }}
             >
-
-              {/* Certificate Badge */}
-
-              <div className="absolute top-5 right-5 z-20">
-
-                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 flex items-center justify-center shadow-lg">
-
-                  <FaCertificate className="text-white text-xl" />
-
+              <div className="relative h-56 overflow-hidden">
+                <img src={certificate.image} alt={certificate.title} className="h-full w-full object-cover transition duration-500 hover:scale-105" />
+                <div className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-slate-950/80 text-sky-300">
+                  <FaCertificate />
                 </div>
-
               </div>
-
-              {/* Image */}
-
-              <div className="overflow-hidden h-56">
-
-                <img
-                  src={certificate.image}
-                  alt={certificate.title}
-                  className="w-full h-full object-cover group-hover:scale-110 duration-700"
-                />
-
-              </div>
-
-              {/* Content */}
 
               <div className="p-7">
-
-                <span className="inline-flex items-center gap-2 text-xs bg-purple-600/20 text-purple-300 px-3 py-2 rounded-full">
-
+                <span className="inline-flex items-center gap-2 rounded-full border border-amber-300/20 bg-amber-300/10 px-3 py-2 text-xs font-semibold text-amber-100">
                   <FaAward />
-
                   Certified
-
                 </span>
-
-                <h3 className="text-2xl font-bold mt-5 group-hover:text-purple-400 transition">
-
-                  {certificate.title}
-
-                </h3>
-
-                <p className="text-cyan-300 mt-3">
-
-                  {certificate.provider}
-
-                </p>
-
-                <p className="text-gray-500 text-sm mt-2">
-
-                  {certificate.year}
-
-                </p>
-
-                <a
-                  href={certificate.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-8 inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 hover:scale-105 transition"
-                >
+                <h3 className="mt-5 text-2xl font-bold text-slate-50">{certificate.title}</h3>
+                <p className="mt-3 text-sky-300">{certificate.provider}</p>
+                <p className="mt-2 text-sm text-slate-500">{certificate.year}</p>
+                <a href={certificate.link} target="_blank" rel="noreferrer" className="button-secondary mt-7 text-sm">
                   View Certificate
-
                   <FaExternalLinkAlt />
-
                 </a>
-
               </div>
-
             </motion.div>
-
           ))}
-
         </div>
-
       </div>
     </motion.section>
   );

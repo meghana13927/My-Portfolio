@@ -11,63 +11,25 @@ function ParticlesBackground() {
       id="tsparticles"
       init={particlesInit}
       options={{
-        fullScreen: {
-          enable: true,
-          zIndex: -10,
-        },
-
-        background: {
-          color: "#030712",
-        },
-
+        fullScreen: { enable: true, zIndex: -10 },
+        background: { color: "transparent" },
         fpsLimit: 120,
-
         particles: {
-          number: {
-            value: 55,
-          },
-
-          color: {
-            value: ["#a855f7", "#06b6d4", "#ec4899"],
-          },
-
+          number: { value: 35 },
+          color: { value: ["#7dd3fc", "#fbbf24", "#cbd5e1"] },
           links: {
             enable: true,
-            distance: 150,
-            color: "#555",
-            opacity: 0.2,
+            distance: 140,
+            color: "#334155",
+            opacity: 0.18,
           },
-
-          move: {
-            enable: true,
-            speed: 1,
-          },
-
-          opacity: {
-            value: 0.5,
-          },
-
-          size: {
-            value: {
-              min: 1,
-              max: 4,
-            },
-          },
+          move: { enable: true, speed: 0.8 },
+          opacity: { value: 0.35 },
+          size: { value: { min: 1, max: 3 } },
         },
-
         interactivity: {
-          events: {
-            onHover: {
-              enable: true,
-              mode: "repulse",
-            },
-          },
-
-          modes: {
-            repulse: {
-              distance: 120,
-            },
-          },
+          events: { onHover: { enable: true, mode: "grab" } },
+          modes: { grab: { distance: 120, links: { opacity: 0.28 } } },
         },
       }}
     />

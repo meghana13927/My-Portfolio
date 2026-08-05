@@ -1,208 +1,66 @@
 import experience from "../data/experience";
 import { motion } from "framer-motion";
-import {
-  FaBriefcase,
-  FaCalendarAlt,
-  FaBuilding,
-  FaCode,
-} from "react-icons/fa";
+import { FaBriefcase, FaBuilding, FaCalendarAlt, FaCode } from "react-icons/fa";
 
 function Experience() {
   return (
-    <motion.section
-      id="experience"
-      className="py-24 bg-gray-950 px-6"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: false }}
-    >
-      <div className="max-w-7xl mx-auto">
-
-        {/* Heading */}
-
-        <div className="text-center mb-20">
-
-          <h2 className="text-5xl md:text-6xl font-bold">
-            Experience
+    <motion.section id="experience" className="section-shell px-6 py-28 lg:px-8" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
+      <div className="mx-auto max-w-7xl">
+        <div className="section-heading">
+          <span className="section-eyebrow">Experience</span>
+          <h2 className="mt-5">
+            Professional work centered on <span className="accent-text">backend strength and product delivery</span>
           </h2>
-
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-400 mx-auto mt-5 rounded-full"></div>
-
-          <p className="text-gray-400 mt-6 max-w-3xl mx-auto text-lg">
-            My professional journey in software development,
-            backend engineering, and quality assurance.
+          <p>
+            My experience includes application development, integration work, and building dependable features that support real business workflows.
           </p>
-
         </div>
 
-        {/* Timeline */}
+        <div className="relative mx-auto max-w-5xl">
+          <div className="absolute left-5 top-3 hidden h-[calc(100%-1.5rem)] w-px bg-slate-700 md:block" />
 
-        <div className="relative">
-
-          {/* Vertical Line */}
-
-          <div className="absolute left-6 top-0 w-1 h-full bg-gradient-to-b from-purple-500 via-cyan-500 to-pink-500 rounded-full"></div>
-
-          {experience.map((item, index) => (
-
-            <motion.div
-              key={item.id}
-              initial={{
-                opacity: 0,
-                x: index % 2 === 0 ? -80 : 80,
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0,
-              }}
-              transition={{
-                duration: 0.7,
-                delay: index * 0.2,
-              }}
-              viewport={{ once: false }}
-              className="relative pl-20 mb-16"
-            >
-
-              {/* Timeline Icon */}
-
-              <div
-                className="absolute left-0 top-8
-                w-12 h-12 rounded-full
-                bg-gradient-to-r
-                from-purple-600
-                to-cyan-500
-                flex items-center justify-center
-                shadow-lg shadow-purple-500/40"
+          <div className="space-y-8">
+            {experience.map((item, index) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.08 }}
+                viewport={{ once: true }}
+                className="relative md:pl-16"
               >
+                <div className="absolute left-0 top-8 hidden h-10 w-10 items-center justify-center rounded-full border border-sky-300/30 bg-slate-900 text-sky-300 md:flex">
+                  <FaBriefcase />
+                </div>
 
-                <FaBriefcase className="text-white text-lg" />
-
-              </div>
-
-              {/* Card */}
-
-              <div
-                className="
-                group
-                bg-white/5
-                backdrop-blur-xl
-                border
-                border-white/10
-                rounded-3xl
-                p-8
-                hover:border-purple-500
-                hover:-translate-y-2
-                hover:shadow-[0_20px_60px_rgba(168,85,247,0.25)]
-                transition-all
-                duration-500"
-              >
-
-                {/* Top */}
-
-                <div className="flex flex-wrap justify-between gap-4">
-
-                  <div>
-
-                    <h3 className="text-3xl font-bold group-hover:text-purple-400 transition">
-
-                      {item.role}
-
-                    </h3>
-
-                    <div className="flex items-center gap-2 mt-3 text-cyan-300">
-
-                      <FaBuilding />
-
-                      <span>{item.company}</span>
-
+                <div className="pro-card rounded-[2rem] p-8">
+                  <div className="flex flex-wrap items-start justify-between gap-4">
+                    <div>
+                      <h3 className="text-3xl font-bold text-slate-50">{item.role}</h3>
+                      <p className="mt-3 flex items-center gap-2 text-sky-300"><FaBuilding /> {item.company}</p>
                     </div>
-
+                    <div className="rounded-full border border-amber-300/20 bg-amber-300/10 px-4 py-2 text-sm font-semibold text-amber-100">
+                      <span className="inline-flex items-center gap-2"><FaCalendarAlt /> {item.duration}</span>
+                    </div>
                   </div>
 
-                  <span
-                    className="
-                    flex items-center
-                    gap-2
-                    bg-purple-600/20
-                    text-purple-300
-                    px-4
-                    py-2
-                    rounded-full
-                    text-sm"
-                  >
+                  <p className="mt-6 leading-8 text-slate-300">{item.description}</p>
 
-                    <FaCalendarAlt />
-
-                    {item.duration}
-
-                  </span>
-
+                  <div className="mt-7">
+                    <p className="mb-4 flex items-center gap-2 font-semibold text-slate-200"><FaCode className="text-sky-300" /> Technologies used</p>
+                    <div className="flex flex-wrap gap-3">
+                      {item.technologies.map((tech) => (
+                        <span key={tech} className="rounded-full border border-slate-800 bg-slate-950/55 px-4 py-2 text-sm text-slate-300">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-
-                {/* Description */}
-
-                <p className="text-gray-300 leading-8 mt-8">
-
-                  {item.description}
-
-                </p>
-
-                {/* Tech */}
-
-                <div className="mt-8">
-
-                  <div className="flex items-center gap-2 mb-4 text-purple-300">
-
-                    <FaCode />
-
-                    <span className="font-semibold">
-
-                      Technologies Used
-
-                    </span>
-
-                  </div>
-
-                  <div className="flex flex-wrap gap-3">
-
-                    {item.technologies.map((tech) => (
-
-                      <span
-                        key={tech}
-                        className="
-                        px-4
-                        py-2
-                        rounded-xl
-                        bg-gray-900
-                        border
-                        border-gray-700
-                        text-sm
-                        text-gray-300
-                        hover:bg-purple-600
-                        hover:border-purple-500
-                        hover:text-white
-                        duration-300"
-                      >
-
-                        {tech}
-
-                      </span>
-
-                    ))}
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </motion.div>
-
-          ))}
-
+              </motion.div>
+            ))}
+          </div>
         </div>
-
       </div>
     </motion.section>
   );

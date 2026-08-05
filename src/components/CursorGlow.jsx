@@ -4,28 +4,21 @@ function CursorGlow() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const moveCursor = (e) => {
-      setPosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
+    const moveCursor = (event) => {
+      setPosition({ x: event.clientX, y: event.clientY });
     };
 
     window.addEventListener("mousemove", moveCursor);
-
-    return () => {
-      window.removeEventListener("mousemove", moveCursor);
-    };
+    return () => window.removeEventListener("mousemove", moveCursor);
   }, []);
 
   return (
     <div
-      className="pointer-events-none fixed z-[9999] h-40 w-40 rounded-full blur-3xl transition-transform duration-75"
+      className="pointer-events-none fixed z-[9999] hidden h-32 w-32 rounded-full blur-3xl transition-transform duration-100 lg:block"
       style={{
-        left: position.x - 80,
-        top: position.y - 80,
-        background:
-          "radial-gradient(circle, rgba(168,85,247,0.35) 0%, rgba(59,130,246,0.15) 80%, transparent 80%)",
+        left: position.x - 64,
+        top: position.y - 64,
+        background: "radial-gradient(circle, rgba(56,189,248,0.14) 0%, rgba(245,158,11,0.08) 55%, transparent 75%)",
       }}
     />
   );
