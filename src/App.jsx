@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import LoadingScreen from "./components/LoadingScreen";
 import ParticlesBackground from "./components/ParticlesBackground";
-import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
@@ -23,7 +22,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1600);
+    }, 1800);
 
     return () => clearTimeout(timer);
   }, []);
@@ -37,7 +36,6 @@ function App() {
       <ParticlesBackground />
       <CursorGlow />
       <BackToTop />
-      <Navbar />
       <Hero />
       <About />
       <Skills />

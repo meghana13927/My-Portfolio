@@ -1,12 +1,30 @@
 ﻿import extracurricular from "../data/extracurricular";
 import { motion } from "framer-motion";
 
-const illustrationMap = {
-  "Video Editing & UI/UX Design": "/illustrations/design.svg",
-  "Drawing & Painting": "/illustrations/design.svg",
-  "Dance Performer": "/illustrations/dance.svg",
-  "Travel & Reading": "/illustrations/travel.svg",
+const imageMap = {
+  "Video Editing & UI/UX Design": "/photos/creative-work.png",
+  "Drawing & Painting": "/photos/creative-work.png",
+  "Dance Performer": "/photos/dance.png",
+  "Travel & Reading": "/photos/reading.png",
 };
+
+const featureCards = [
+  {
+    title: "Travel",
+    text: "Travel brings new perspectives, curiosity, and inspiration that carry over into the way I think and create.",
+    image: "/photos/travel.png",
+  },
+  {
+    title: "Dance",
+    text: "Dance adds expression, confidence, rhythm, and stage presence to my creative side.",
+    image: "/photos/dance.png",
+  },
+  {
+    title: "Reading",
+    text: "Reading keeps me reflective, calm, and constantly open to learning and growth.",
+    image: "/photos/reading.png",
+  },
+];
 
 function ExtraCurricular() {
   return (
@@ -15,17 +33,17 @@ function ExtraCurricular() {
         <div className="section-heading">
           <span className="section-eyebrow">Activities</span>
           <h2 className="mt-5">
-            Life outside coding adds <span className="accent-text">energy and creativity</span>
+            Personal interests that add <span className="accent-text">creativity and balance</span>
           </h2>
           <p>
-            These interests keep me inspired and expressive, and they bring extra creativity into the way I approach design, teamwork, and problem-solving.
+            Outside development, these activities keep me inspired and help shape a more thoughtful, expressive approach to the work I do.
           </p>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-2">
           {extracurricular.map((item, index) => {
             const Icon = item.icon;
-            const illustration = illustrationMap[item.title] ?? "/illustrations/reading.svg";
+            const image = imageMap[item.title] ?? "/photos/creative-work.png";
 
             return (
               <motion.div
@@ -35,9 +53,10 @@ function ExtraCurricular() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.08 }}
                 viewport={{ once: true }}
+                whileHover={{ y: -6, rotateX: 1.5, rotateY: index % 2 === 0 ? -2 : 2 }}
               >
-                <div className="h-56 overflow-hidden bg-gradient-to-r from-orange-50 via-white to-sky-50">
-                  <img src={illustration} alt={item.title} className="h-full w-full object-cover" />
+                <div className="h-64 overflow-hidden bg-slate-100">
+                  <img src={image} alt={item.title} className="h-full w-full object-cover transition duration-700 hover:scale-105" />
                 </div>
                 <div className="p-8">
                   <div className="flex items-center gap-4">
@@ -57,27 +76,23 @@ function ExtraCurricular() {
         </div>
 
         <div className="mt-8 grid gap-6 md:grid-cols-3">
-          <div className="pro-card overflow-hidden rounded-[2rem]">
-            <img src="/illustrations/travel.svg" alt="Travel" className="h-44 w-full object-cover" />
-            <div className="p-6">
-              <h3 className="text-2xl font-bold text-slate-900">Travel</h3>
-              <p className="mt-3 text-slate-600">Exploring new places brings fresh ideas, curiosity, and a wider perspective.</p>
-            </div>
-          </div>
-          <div className="pro-card overflow-hidden rounded-[2rem]">
-            <img src="/illustrations/dance.svg" alt="Dance" className="h-44 w-full object-cover" />
-            <div className="p-6">
-              <h3 className="text-2xl font-bold text-slate-900">Dance</h3>
-              <p className="mt-3 text-slate-600">Dance adds expression, confidence, stage presence, and creative energy.</p>
-            </div>
-          </div>
-          <div className="pro-card overflow-hidden rounded-[2rem]">
-            <img src="/illustrations/reading.svg" alt="Reading" className="h-44 w-full object-cover" />
-            <div className="p-6">
-              <h3 className="text-2xl font-bold text-slate-900">Reading</h3>
-              <p className="mt-3 text-slate-600">Reading helps me stay reflective, thoughtful, and open to new ideas.</p>
-            </div>
-          </div>
+          {featureCards.map((card, index) => (
+            <motion.div
+              key={card.title}
+              className="pro-card overflow-hidden rounded-[2rem]"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15 + index * 0.08 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}
+            >
+              <img src={card.image} alt={card.title} className="h-44 w-full object-cover" />
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-slate-900">{card.title}</h3>
+                <p className="mt-3 text-slate-600">{card.text}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </motion.section>

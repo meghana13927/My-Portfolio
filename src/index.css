@@ -2,16 +2,16 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #fef6ee;
-  --bg-soft: rgba(255, 255, 255, 0.72);
-  --bg-card: rgba(255, 255, 255, 0.78);
-  --surface-border: rgba(148, 163, 184, 0.22);
-  --surface-border-strong: rgba(14, 165, 233, 0.34);
+  --bg: #f8fafc;
+  --bg-soft: rgba(255, 255, 255, 0.78);
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --surface-border: rgba(203, 213, 225, 0.62);
+  --surface-border-strong: rgba(14, 165, 233, 0.38);
   --text-main: #334155;
   --text-soft: #64748b;
   --heading: #0f172a;
-  --shadow-soft: 0 24px 60px rgba(217, 119, 6, 0.08);
-  --shadow-strong: 0 30px 80px rgba(14, 165, 233, 0.14);
+  --shadow-soft: 0 28px 80px rgba(15, 23, 42, 0.08);
+  --shadow-strong: 0 34px 110px rgba(14, 165, 233, 0.14);
 }
 
 html {
@@ -23,9 +23,9 @@ body {
   padding: 0;
   min-width: 320px;
   background:
-    radial-gradient(circle at top left, rgba(251, 191, 36, 0.18), transparent 24%),
-    radial-gradient(circle at top right, rgba(56, 189, 248, 0.15), transparent 26%),
-    linear-gradient(180deg, #fff7ed 0%, #fdf2f8 38%, #eff6ff 100%);
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 24%),
+    radial-gradient(circle at top right, rgba(245, 158, 11, 0.14), transparent 26%),
+    linear-gradient(180deg, #f8fafc 0%, #fff7ed 35%, #f8fafc 68%, #eff6ff 100%);
   color: var(--text-main);
   font-family: "Manrope", sans-serif;
   overflow-x: hidden;
@@ -55,13 +55,13 @@ h6 {
 }
 
 ::selection {
-  background: rgba(251, 191, 36, 0.3);
+  background: rgba(125, 211, 252, 0.35);
   color: #0f172a;
 }
 
 .app-shell {
   position: relative;
-  background: linear-gradient(180deg, rgba(255, 251, 235, 0.78) 0%, rgba(254, 242, 242, 0.82) 36%, rgba(239, 246, 255, 0.9) 100%);
+  background: linear-gradient(180deg, rgba(248, 250, 252, 0.88) 0%, rgba(255, 247, 237, 0.76) 32%, rgba(255, 255, 255, 0.82) 70%, rgba(239, 246, 255, 0.92) 100%);
 }
 
 .section-shell {
@@ -75,8 +75,8 @@ h6 {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 12% 18%, rgba(251, 191, 36, 0.14), transparent 18%),
-    radial-gradient(circle at 84% 20%, rgba(56, 189, 248, 0.12), transparent 17%);
+    radial-gradient(circle at 12% 18%, rgba(125, 211, 252, 0.14), transparent 18%),
+    radial-gradient(circle at 84% 22%, rgba(253, 186, 116, 0.12), transparent 16%);
 }
 
 .section-heading {
@@ -118,18 +118,19 @@ h6 {
 }
 
 .accent-text {
-  background: linear-gradient(135deg, #0f172a 0%, #0284c7 45%, #f59e0b 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #0284c7 48%, #f59e0b 100%);
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
 }
 
 .pro-card {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.68));
-  backdrop-filter: blur(18px);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.72));
+  backdrop-filter: blur(22px);
   border: 1px solid var(--surface-border);
   box-shadow: var(--shadow-soft);
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  transform-style: preserve-3d;
 }
 
 .pro-card:hover {
@@ -144,17 +145,17 @@ h6 {
   gap: 0.75rem;
   border-radius: 999px;
   padding: 0.95rem 1.5rem;
-  background: linear-gradient(135deg, #f59e0b, #0ea5e9);
+  background: linear-gradient(135deg, #0284c7, #22c55e 120%);
   color: #fff;
   font-weight: 700;
-  box-shadow: 0 18px 45px rgba(245, 158, 11, 0.22);
+  box-shadow: 0 18px 45px rgba(14, 165, 233, 0.2);
   transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
 }
 
 .button-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 24px 60px rgba(14, 165, 233, 0.24);
-  filter: saturate(1.04);
+  filter: saturate(1.05);
 }
 
 .button-secondary {
@@ -164,8 +165,8 @@ h6 {
   gap: 0.75rem;
   border-radius: 999px;
   padding: 0.95rem 1.5rem;
-  border: 1px solid rgba(148, 163, 184, 0.32);
-  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  background: rgba(255, 255, 255, 0.85);
   color: #334155;
   font-weight: 700;
   transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
@@ -174,7 +175,7 @@ h6 {
 .button-secondary:hover {
   transform: translateY(-2px);
   border-color: rgba(2, 132, 199, 0.34);
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.98);
 }
 
 .float {
