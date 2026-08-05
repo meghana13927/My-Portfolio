@@ -21,7 +21,7 @@ function Education() {
             {education.map((item, index) => (
               <motion.div
                 key={item.id}
-                className="pro-card rounded-[2rem] p-8"
+                className="pro-card panel-3d tilt-right rounded-[2rem] p-8"
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.08 }}
@@ -53,7 +53,7 @@ function Education() {
           </div>
 
           <div className="space-y-8">
-            <div className="pro-card overflow-hidden rounded-[2rem]">
+            <div className="pro-card panel-3d tilt-flat overflow-hidden rounded-[2rem]">
               <img src="/illustrations/reading.svg" alt="Reading illustration" className="h-56 w-full object-cover" />
               <div className="p-7">
                 <h3 className="text-2xl font-bold text-slate-900">Learning Mindset</h3>
@@ -62,7 +62,7 @@ function Education() {
                 </p>
               </div>
             </div>
-            <div className="pro-card rounded-[2rem] p-7">
+            <div className="pro-card panel-3d tilt-flat rounded-[2rem] p-7">
               <h3 className="text-2xl font-bold text-slate-900">What It Built</h3>
               <ul className="mt-4 space-y-3 text-slate-600">
                 <li>Strong problem-solving approach</li>
@@ -78,3 +78,4 @@ function Education() {
 }
 
 export default Education;
+

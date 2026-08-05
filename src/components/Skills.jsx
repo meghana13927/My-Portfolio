@@ -19,14 +19,14 @@ function Skills() {
           {skills.map((category, index) => (
             <motion.div
               key={category.title}
-              className="pro-card rounded-[2rem] p-8 md:p-10"
+              className="pro-card panel-3d tilt-flat rounded-[2rem] p-8 md:p-10"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.08 }}
               viewport={{ once: true }}
             >
               <div className="mb-8 flex items-center gap-4">
-                <div className="h-12 w-1 rounded-full bg-gradient-to-b from-amber-400 to-sky-400" />
+                <div className="h-12 w-1 rounded-full bg-gradient-to-b from-teal-500 to-sky-400" />
                 <h3 className="text-3xl font-bold text-slate-900">{category.title}</h3>
               </div>
 
@@ -37,8 +37,8 @@ function Skills() {
                   return (
                     <motion.div
                       key={skill.name}
-                      whileHover={{ y: -6 }}
-                      className="rounded-[1.5rem] border border-orange-100 bg-white/80 p-5 text-center transition hover:border-sky-200 hover:bg-sky-50/60"
+                      whileHover={{ y: -6, rotateX: 4, rotateY: -4 }}
+                      className="rounded-[1.5rem] border border-sky-100 bg-white/82 p-5 text-center transition hover:border-teal-200 hover:bg-teal-50/40"
                     >
                       <div className="flex justify-center">
                         <Icon className={`text-4xl ${skill.color}`} />

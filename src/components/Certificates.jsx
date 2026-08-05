@@ -20,7 +20,7 @@ function Certificates() {
           {certificates.map((certificate, index) => (
             <motion.div
               key={certificate.id}
-              className="pro-card overflow-hidden rounded-[2rem]"
+              className="pro-card panel-3d tilt-right overflow-hidden rounded-[2rem]"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.08 }}
@@ -29,18 +29,18 @@ function Certificates() {
             >
               <div className="relative h-56 overflow-hidden">
                 <img src={certificate.image} alt={certificate.title} className="h-full w-full object-cover transition duration-500 hover:scale-105" />
-                <div className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-sky-700 shadow-md">
+                <div className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-teal-700 shadow-md">
                   <FaCertificate />
                 </div>
               </div>
 
               <div className="p-7">
-                <span className="inline-flex items-center gap-2 rounded-full bg-orange-50 px-3 py-2 text-xs font-semibold text-orange-700">
+                <span className="inline-flex items-center gap-2 rounded-full bg-sky-50 px-3 py-2 text-xs font-semibold text-sky-700">
                   <FaAward />
                   Certified
                 </span>
                 <h3 className="mt-5 text-2xl font-bold text-slate-900">{certificate.title}</h3>
-                <p className="mt-3 text-sky-700">{certificate.provider}</p>
+                <p className="mt-3 text-teal-700">{certificate.provider}</p>
                 <p className="mt-2 text-sm text-slate-500">{certificate.year}</p>
                 <a href={certificate.link} target="_blank" rel="noreferrer" className="button-secondary mt-7 text-sm">
                   View Certificate

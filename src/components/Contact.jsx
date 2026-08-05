@@ -39,7 +39,7 @@ function Contact() {
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <motion.div className="space-y-6" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             {contactCards.map((card) => (
-              <div key={card.title} className="pro-card rounded-[1.75rem] p-6">
+              <div key={card.title} className="pro-card panel-3d tilt-flat rounded-[1.75rem] p-6">
                 <div className="flex items-center gap-5">
                   <div className={`flex h-14 w-14 items-center justify-center rounded-2xl text-xl ${card.tone}`}>
                     {card.icon}
@@ -65,7 +65,7 @@ function Contact() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <form className="pro-card rounded-[2rem] p-8 md:p-10">
+            <form className="pro-card panel-3d tilt-right rounded-[2rem] p-8 md:p-10">
               <div className="grid gap-5 md:grid-cols-2">
                 <input type="text" placeholder="Your Name" className="rounded-2xl border border-orange-100 bg-white/85 p-4 text-slate-700 outline-none transition focus:border-sky-300" />
                 <input type="email" placeholder="Email Address" className="rounded-2xl border border-orange-100 bg-white/85 p-4 text-slate-700 outline-none transition focus:border-sky-300" />
@@ -85,3 +85,4 @@ function Contact() {
 }
 
 export default Contact;
+

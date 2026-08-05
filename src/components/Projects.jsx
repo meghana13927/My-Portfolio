@@ -20,18 +20,18 @@ function Projects() {
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              className="pro-card overflow-hidden rounded-[2rem]"
+              className="pro-card panel-3d tilt-right overflow-hidden rounded-[2rem]"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.08 }}
               viewport={{ once: true }}
               whileHover={{ y: -8 }}
             >
-              <div className="h-2 bg-gradient-to-r from-amber-400 via-orange-300 to-sky-400" />
+              <div className="h-2 bg-gradient-to-r from-teal-500 via-sky-400 to-amber-300" />
               <div className="flex h-full flex-col p-8">
                 <div className="flex items-center justify-between gap-4">
-                  <p className="text-sm font-bold uppercase tracking-[0.16em] text-sky-700">Project {String(project.id).padStart(2, "0")}</p>
-                  <span className="rounded-full bg-orange-50 px-3 py-1 text-xs font-semibold text-orange-700">
+                  <p className="text-sm font-bold uppercase tracking-[0.16em] text-teal-700">Project {String(project.id).padStart(2, "0")}</p>
+                  <span className="rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700">
                     {project.type}
                   </span>
                 </div>
@@ -41,7 +41,7 @@ function Projects() {
 
                 <div className="mt-6 flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
-                    <span key={tech} className="rounded-full border border-orange-100 bg-white px-3 py-2 text-sm text-slate-600">
+                    <span key={tech} className="rounded-full border border-sky-100 bg-white px-3 py-2 text-sm text-slate-600">
                       {tech}
                     </span>
                   ))}

@@ -20,7 +20,7 @@ function Achievements() {
           {achievements.map((item, index) => (
             <motion.div
               key={item.id}
-              className="pro-card rounded-[2rem] p-8"
+              className="pro-card panel-3d tilt-flat rounded-[2rem] p-8"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.08 }}

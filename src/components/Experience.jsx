@@ -17,7 +17,7 @@ function Experience() {
         </div>
 
         <div className="grid gap-8 lg:grid-cols-[0.34fr_0.66fr]">
-          <div className="pro-card rounded-[2rem] overflow-hidden">
+          <div className="pro-card panel-3d tilt-flat rounded-[2rem] overflow-hidden">
             <img src="/illustrations/coding.svg" alt="Coding illustration" className="h-64 w-full object-cover" />
             <div className="p-8">
               <h3 className="text-3xl font-bold text-slate-900">Professional Journey</h3>
@@ -35,7 +35,7 @@ function Experience() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.08 }}
                 viewport={{ once: true }}
-                className="pro-card rounded-[2rem] p-8"
+                className="pro-card panel-3d tilt-right rounded-[2rem] p-8"
               >
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div>
@@ -73,3 +73,4 @@ function Experience() {
 }
 
 export default Experience;
+
