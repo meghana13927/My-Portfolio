@@ -1,0 +1,23 @@
+﻿<svg width="640" height="480" viewBox="0 0 640 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="480" rx="36" fill="url(#bg)"/>
+  <circle cx="500" cy="114" r="70" fill="#F472B6" fill-opacity="0.16"/>
+  <circle cx="148" cy="362" r="96" fill="#2DD4BF" fill-opacity="0.16"/>
+  <rect x="118" y="92" width="404" height="292" rx="30" fill="#FFFBEB" stroke="#FDBA74" stroke-width="4"/>
+  <rect x="148" y="126" width="140" height="148" rx="22" fill="#FDE68A"/>
+  <rect x="308" y="126" width="184" height="20" rx="10" fill="#FB7185" fill-opacity="0.5"/>
+  <rect x="308" y="164" width="146" height="14" rx="7" fill="#94A3B8"/>
+  <rect x="308" y="190" width="126" height="14" rx="7" fill="#94A3B8"/>
+  <rect x="308" y="216" width="110" height="14" rx="7" fill="#94A3B8"/>
+  <rect x="148" y="292" width="344" height="56" rx="18" fill="#E0F2FE"/>
+  <circle cx="178" cy="320" r="16" fill="#0EA5E9"/>
+  <circle cx="226" cy="320" r="16" fill="#F59E0B"/>
+  <circle cx="274" cy="320" r="16" fill="#EC4899"/>
+  <path d="M178 240C196 212 230 186 258 172C248 204 222 236 178 240Z" fill="#F97316"/>
+  <path d="M232 246C268 244 308 256 338 278C302 286 262 274 232 246Z" fill="#14B8A6"/>
+  <defs>
+    <linearGradient id="bg" x1="42" y1="44" x2="598" y2="442" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FEF3C7"/>
+      <stop offset="1" stop-color="#FCE7F3"/>
+    </linearGradient>
+  </defs>
+</svg>

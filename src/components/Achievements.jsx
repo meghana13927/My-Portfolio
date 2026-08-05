@@ -1,4 +1,4 @@
-import achievements from "../data/achievements";
+﻿import achievements from "../data/achievements";
 import { motion } from "framer-motion";
 import { FaTrophy } from "react-icons/fa";
 
@@ -9,10 +9,10 @@ function Achievements() {
         <div className="section-heading">
           <span className="section-eyebrow">Achievements</span>
           <h2 className="mt-5">
-            Milestones that show <span className="accent-text">consistency and momentum</span>
+            Milestones presented with <span className="accent-text">more warmth and energy</span>
           </h2>
           <p>
-            Alongside project work, these achievements reflect curiosity, discipline, and a strong drive to keep improving.
+            These achievements reflect steady effort, curiosity, and the motivation to keep learning and growing.
           </p>
         </div>
 
@@ -26,11 +26,11 @@ function Achievements() {
               transition={{ delay: index * 0.08 }}
               viewport={{ once: true }}
             >
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-300/10 text-2xl text-amber-200">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-100 text-2xl text-amber-600">
                 <FaTrophy />
               </div>
-              <h3 className="mt-6 text-2xl font-bold text-slate-50">{item.title}</h3>
-              <p className="mt-4 leading-7 text-slate-400">{item.description}</p>
+              <h3 className="mt-6 text-2xl font-bold text-slate-900">{item.title}</h3>
+              <p className="mt-4 leading-7 text-slate-600">{item.description}</p>
             </motion.div>
           ))}
         </div>

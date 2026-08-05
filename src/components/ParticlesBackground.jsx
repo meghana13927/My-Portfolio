@@ -1,4 +1,4 @@
-import Particles from "@tsparticles/react";
+﻿import Particles from "@tsparticles/react";
 import { loadSlim } from "tsparticles-slim";
 
 function ParticlesBackground() {
@@ -15,21 +15,21 @@ function ParticlesBackground() {
         background: { color: "transparent" },
         fpsLimit: 120,
         particles: {
-          number: { value: 35 },
-          color: { value: ["#7dd3fc", "#fbbf24", "#cbd5e1"] },
+          number: { value: 30 },
+          color: { value: ["#f59e0b", "#38bdf8", "#fb7185"] },
           links: {
             enable: true,
-            distance: 140,
-            color: "#334155",
+            distance: 150,
+            color: "#fcd34d",
             opacity: 0.18,
           },
-          move: { enable: true, speed: 0.8 },
+          move: { enable: true, speed: 0.75 },
           opacity: { value: 0.35 },
           size: { value: { min: 1, max: 3 } },
         },
         interactivity: {
           events: { onHover: { enable: true, mode: "grab" } },
-          modes: { grab: { distance: 120, links: { opacity: 0.28 } } },
+          modes: { grab: { distance: 120, links: { opacity: 0.3 } } },
         },
       }}
     />

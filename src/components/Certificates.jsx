@@ -1,4 +1,4 @@
-import certificates from "../data/certificates";
+﻿import certificates from "../data/certificates";
 import { motion } from "framer-motion";
 import { FaAward, FaCertificate, FaExternalLinkAlt } from "react-icons/fa";
 
@@ -9,10 +9,10 @@ function Certificates() {
         <div className="section-heading">
           <span className="section-eyebrow">Certificates</span>
           <h2 className="mt-5">
-            Proof of <span className="accent-text">continuous learning</span>
+            Learning progress shown in a <span className="accent-text">cleaner and brighter way</span>
           </h2>
           <p>
-            These certifications reflect my commitment to growing across technical areas and staying ready for real-world software challenges.
+            These certifications reflect my commitment to learning, improving, and staying ready for practical software work.
           </p>
         </div>
 
@@ -29,18 +29,18 @@ function Certificates() {
             >
               <div className="relative h-56 overflow-hidden">
                 <img src={certificate.image} alt={certificate.title} className="h-full w-full object-cover transition duration-500 hover:scale-105" />
-                <div className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-slate-950/80 text-sky-300">
+                <div className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-sky-700 shadow-md">
                   <FaCertificate />
                 </div>
               </div>
 
               <div className="p-7">
-                <span className="inline-flex items-center gap-2 rounded-full border border-amber-300/20 bg-amber-300/10 px-3 py-2 text-xs font-semibold text-amber-100">
+                <span className="inline-flex items-center gap-2 rounded-full bg-orange-50 px-3 py-2 text-xs font-semibold text-orange-700">
                   <FaAward />
                   Certified
                 </span>
-                <h3 className="mt-5 text-2xl font-bold text-slate-50">{certificate.title}</h3>
-                <p className="mt-3 text-sky-300">{certificate.provider}</p>
+                <h3 className="mt-5 text-2xl font-bold text-slate-900">{certificate.title}</h3>
+                <p className="mt-3 text-sky-700">{certificate.provider}</p>
                 <p className="mt-2 text-sm text-slate-500">{certificate.year}</p>
                 <a href={certificate.link} target="_blank" rel="noreferrer" className="button-secondary mt-7 text-sm">
                   View Certificate

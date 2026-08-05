@@ -1,4 +1,4 @@
-import projects from "../data/projects";
+﻿import projects from "../data/projects";
 import { motion } from "framer-motion";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
@@ -9,10 +9,10 @@ function Projects() {
         <div className="section-heading">
           <span className="section-eyebrow">Projects</span>
           <h2 className="mt-5">
-            Selected work with a <span className="accent-text">clear product mindset</span>
+            Selected work with a <span className="accent-text">strong product feel</span>
           </h2>
           <p>
-            These projects reflect how I think about architecture, usability, and maintainable implementation across different application types.
+            These projects show how I combine clean implementation, backend thinking, and interface presentation to create complete applications.
           </p>
         </div>
 
@@ -27,20 +27,21 @@ function Projects() {
               viewport={{ once: true }}
               whileHover={{ y: -8 }}
             >
+              <div className="h-2 bg-gradient-to-r from-amber-400 via-orange-300 to-sky-400" />
               <div className="flex h-full flex-col p-8">
                 <div className="flex items-center justify-between gap-4">
-                  <p className="text-sm font-bold uppercase tracking-[0.16em] text-sky-300">Project {String(project.id).padStart(2, "0")}</p>
-                  <span className="rounded-full border border-amber-300/20 bg-amber-300/10 px-3 py-1 text-xs font-semibold text-amber-200">
+                  <p className="text-sm font-bold uppercase tracking-[0.16em] text-sky-700">Project {String(project.id).padStart(2, "0")}</p>
+                  <span className="rounded-full bg-orange-50 px-3 py-1 text-xs font-semibold text-orange-700">
                     {project.type}
                   </span>
                 </div>
 
-                <h3 className="mt-5 text-2xl font-bold text-slate-50">{project.title}</h3>
-                <p className="mt-4 leading-7 text-slate-400">{project.description}</p>
+                <h3 className="mt-5 text-2xl font-bold text-slate-900">{project.title}</h3>
+                <p className="mt-4 leading-7 text-slate-600">{project.description}</p>
 
                 <div className="mt-6 flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
-                    <span key={tech} className="rounded-full border border-slate-800 bg-slate-950/65 px-3 py-2 text-sm text-slate-300">
+                    <span key={tech} className="rounded-full border border-orange-100 bg-white px-3 py-2 text-sm text-slate-600">
                       {tech}
                     </span>
                   ))}

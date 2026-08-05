@@ -1,4 +1,4 @@
-import skills from "../data/skills";
+﻿import skills from "../data/skills";
 import { motion } from "framer-motion";
 
 function Skills() {
@@ -8,10 +8,10 @@ function Skills() {
         <div className="section-heading">
           <span className="section-eyebrow">Skills</span>
           <h2 className="mt-5">
-            A practical stack for <span className="accent-text">shipping complete products</span>
+            A practical stack for <span className="accent-text">beautiful and reliable products</span>
           </h2>
           <p>
-            I work across frontend, backend, database, tooling, and testing layers so projects move smoothly from idea to delivery.
+            I work across frontend, backend, database, testing, and tools so projects can move from concept to finished product with confidence.
           </p>
         </div>
 
@@ -26,8 +26,8 @@ function Skills() {
               viewport={{ once: true }}
             >
               <div className="mb-8 flex items-center gap-4">
-                <div className="h-12 w-1 rounded-full bg-gradient-to-b from-sky-300 to-amber-300" />
-                <h3 className="text-3xl font-bold text-slate-50">{category.title}</h3>
+                <div className="h-12 w-1 rounded-full bg-gradient-to-b from-amber-400 to-sky-400" />
+                <h3 className="text-3xl font-bold text-slate-900">{category.title}</h3>
               </div>
 
               <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
@@ -38,12 +38,12 @@ function Skills() {
                     <motion.div
                       key={skill.name}
                       whileHover={{ y: -6 }}
-                      className="rounded-[1.5rem] border border-slate-800/80 bg-slate-950/55 p-5 text-center transition hover:border-sky-400/30 hover:bg-slate-900/80"
+                      className="rounded-[1.5rem] border border-orange-100 bg-white/80 p-5 text-center transition hover:border-sky-200 hover:bg-sky-50/60"
                     >
                       <div className="flex justify-center">
                         <Icon className={`text-4xl ${skill.color}`} />
                       </div>
-                      <h4 className="mt-4 font-semibold text-slate-100">{skill.name}</h4>
+                      <h4 className="mt-4 font-semibold text-slate-800">{skill.name}</h4>
                     </motion.div>
                   );
                 })}

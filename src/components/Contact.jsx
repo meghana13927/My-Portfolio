@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import { FaEnvelope, FaGithub, FaLinkedin, FaMapMarkerAlt, FaPaperPlane, FaPhone } from "react-icons/fa";
 
 const contactCards = [
@@ -6,19 +6,19 @@ const contactCards = [
     icon: <FaEnvelope />,
     title: "Email",
     value: "meghameghana370@gmail.com",
-    tone: "bg-sky-400/10 text-sky-300",
+    tone: "bg-sky-100 text-sky-700",
   },
   {
     icon: <FaPhone />,
     title: "Phone",
     value: "+91 9353423669",
-    tone: "bg-emerald-400/10 text-emerald-300",
+    tone: "bg-emerald-100 text-emerald-700",
   },
   {
     icon: <FaMapMarkerAlt />,
     title: "Location",
     value: "Bangalore, Karnataka",
-    tone: "bg-amber-300/10 text-amber-200",
+    tone: "bg-amber-100 text-amber-700",
   },
 ];
 
@@ -29,10 +29,10 @@ function Contact() {
         <div className="section-heading">
           <span className="section-eyebrow">Contact</span>
           <h2 className="mt-5">
-            Let&apos;s build something <span className="accent-text">useful and well-crafted</span>
+            Let&apos;s create something <span className="accent-text">professional and memorable</span>
           </h2>
           <p>
-            If you have an opportunity, an idea, or a project that needs a dependable developer, I&apos;d be happy to connect.
+            If you have an opportunity, a project idea, or a role that fits my background, I&apos;d be happy to connect.
           </p>
         </div>
 
@@ -46,7 +46,7 @@ function Contact() {
                   </div>
                   <div>
                     <p className="text-sm uppercase tracking-[0.16em] text-slate-500">{card.title}</p>
-                    <p className="mt-2 text-lg font-semibold text-slate-100">{card.value}</p>
+                    <p className="mt-2 text-lg font-semibold text-slate-800">{card.value}</p>
                   </div>
                 </div>
               </div>
@@ -67,11 +67,11 @@ function Contact() {
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <form className="pro-card rounded-[2rem] p-8 md:p-10">
               <div className="grid gap-5 md:grid-cols-2">
-                <input type="text" placeholder="Your Name" className="rounded-2xl border border-slate-800 bg-slate-950/60 p-4 text-slate-200 outline-none transition focus:border-sky-400/40" />
-                <input type="email" placeholder="Email Address" className="rounded-2xl border border-slate-800 bg-slate-950/60 p-4 text-slate-200 outline-none transition focus:border-sky-400/40" />
+                <input type="text" placeholder="Your Name" className="rounded-2xl border border-orange-100 bg-white/85 p-4 text-slate-700 outline-none transition focus:border-sky-300" />
+                <input type="email" placeholder="Email Address" className="rounded-2xl border border-orange-100 bg-white/85 p-4 text-slate-700 outline-none transition focus:border-sky-300" />
               </div>
-              <input type="text" placeholder="Subject" className="mt-5 w-full rounded-2xl border border-slate-800 bg-slate-950/60 p-4 text-slate-200 outline-none transition focus:border-sky-400/40" />
-              <textarea rows="6" placeholder="Write your message..." className="mt-5 w-full rounded-2xl border border-slate-800 bg-slate-950/60 p-4 text-slate-200 outline-none transition focus:border-sky-400/40 resize-none" />
+              <input type="text" placeholder="Subject" className="mt-5 w-full rounded-2xl border border-orange-100 bg-white/85 p-4 text-slate-700 outline-none transition focus:border-sky-300" />
+              <textarea rows="6" placeholder="Write your message..." className="mt-5 w-full rounded-2xl border border-orange-100 bg-white/85 p-4 text-slate-700 outline-none transition focus:border-sky-300 resize-none" />
               <button type="submit" className="button-primary mt-6 w-full">
                 <FaPaperPlane />
                 Send Message

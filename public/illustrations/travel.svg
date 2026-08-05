@@ -1,0 +1,20 @@
+﻿<svg width="640" height="480" viewBox="0 0 640 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="480" rx="36" fill="url(#bg)"/>
+  <circle cx="504" cy="110" r="72" fill="#38BDF8" fill-opacity="0.18"/>
+  <path d="M0 352C78 310 162 296 254 316C348 336 428 392 640 314V480H0V352Z" fill="#86EFAC"/>
+  <path d="M0 374C102 332 184 328 266 346C352 366 432 404 640 338V480H0V374Z" fill="#0EA5E9" fill-opacity="0.2"/>
+  <path d="M178 196L284 138L412 170L500 124L470 232L348 278L246 248L178 196Z" fill="#FFF7ED" stroke="#FDBA74" stroke-width="4"/>
+  <circle cx="286" cy="172" r="18" fill="#F59E0B"/>
+  <path d="M360 174L430 154" stroke="#0F172A" stroke-width="6" stroke-linecap="round"/>
+  <path d="M250 214L350 236L438 196" stroke="#0F172A" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="224" cy="124" r="26" fill="#FDE68A"/>
+  <path d="M214 126H234" stroke="#B45309" stroke-width="5" stroke-linecap="round"/>
+  <path d="M224 116V136" stroke="#B45309" stroke-width="5" stroke-linecap="round"/>
+  <text x="104" y="102" fill="#0F172A" font-size="28" font-family="Arial" font-weight="700">Travel</text>
+  <defs>
+    <linearGradient id="bg" x1="54" y1="36" x2="598" y2="438" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DBEAFE"/>
+      <stop offset="1" stop-color="#ECFCCB"/>
+    </linearGradient>
+  </defs>
+</svg>

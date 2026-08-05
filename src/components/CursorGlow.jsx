@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 
 function CursorGlow() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -18,7 +18,7 @@ function CursorGlow() {
       style={{
         left: position.x - 64,
         top: position.y - 64,
-        background: "radial-gradient(circle, rgba(56,189,248,0.14) 0%, rgba(245,158,11,0.08) 55%, transparent 75%)",
+        background: "radial-gradient(circle, rgba(251,191,36,0.18) 0%, rgba(56,189,248,0.12) 55%, transparent 75%)",
       }}
     />
   );
