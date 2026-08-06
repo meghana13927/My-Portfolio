@@ -8,8 +8,6 @@ import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Resume from "./components/Resume";
 import Education from "./components/Education";
-import Certificates from "./components/Certificates";
-import Achievements from "./components/Achievements";
 import ExtraCurricular from "./components/ExtraCurricular";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -43,8 +41,6 @@ function App() {
       <Experience />
       <Resume />
       <Education />
-      <Certificates />
-      <Achievements />
       <ExtraCurricular />
       <Contact />
       <Footer />
