@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { FaCodeBranch, FaLaptopCode, FaLayerGroup, FaUserTie } from "react-icons/fa";
-import aboutImage from "../assets/images/image1.jpeg";
 
 const points = [
   {
@@ -45,55 +44,44 @@ function About() {
           </p>
         </div>
 
-        <div className="about-grid">
-          <motion.div
-            className="about-visual-card"
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            <img src={aboutImage} alt="Meghana H M presentation photograph" className="about-visual-image" loading="lazy" />
-          </motion.div>
+        <motion.div
+          className="about-content-stack"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <article className="about-story">
+            <p>
+              I am a software developer who enjoys building practical applications that are clean on the surface and reliable under the hood. My work combines frontend development, backend logic, API integration, database-driven features, and e-commerce-oriented workflows.
+            </p>
+            <p>
+              With experience across development and QA, I bring attention to both functionality and usability while working on business-focused web applications using tools such as Java, Shopify, and Figma alongside my core development stack.
+            </p>
+          </article>
 
-          <motion.div
-            className="about-content-stack"
-            initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            <article className="about-story">
-              <p>
-                I am a software developer who enjoys building practical applications that are clean on the surface and reliable under the hood. My work combines frontend development, backend logic, API integration, database-driven features, and e-commerce-oriented workflows.
-              </p>
-              <p>
-                With experience across development and QA, I bring attention to both functionality and usability while working on business-focused web applications using tools such as Java, Shopify, and Figma alongside my core development stack.
-              </p>
-            </article>
+          <div className="about-card-grid">
+            {points.map((item, index) => {
+              const Icon = item.icon;
 
-            <div className="about-card-grid">
-              {points.map((item, index) => {
-                const Icon = item.icon;
-
-                return (
-                  <motion.article
-                    key={item.title}
-                    className="about-feature-card"
-                    initial={{ opacity: 0, y: 18 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ delay: index * 0.06 }}
-                  >
-                    <div className="about-icon">
-                      <Icon />
-                    </div>
-                    <h3>{item.title}</h3>
-                    <p>{item.text}</p>
-                  </motion.article>
-                );
-              })}
-            </div>
-          </motion.div>
-        </div>
+              return (
+                <motion.article
+                  key={item.title}
+                  className="about-feature-card"
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ delay: index * 0.06 }}
+                >
+                  <div className="about-icon">
+                    <Icon />
+                  </div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </motion.article>
+              );
+            })}
+          </div>
+        </motion.div>
       </div>
     </motion.section>
   );
