@@ -1,30 +1,32 @@
 import { motion } from "framer-motion";
-import { FaBookOpen, FaMusic, FaPaintBrush, FaUsers } from "react-icons/fa";
+import { FaMedal, FaStar } from "react-icons/fa";
+import danceArt from "../assets/images/dance1.jfif";
+import danceTeam from "../assets/images/dance2.jpeg";
 
-const cards = [
+const milestones = [
   {
-    title: "Dance & Cultural Activities",
-    text: "Part of SDM Kalavaibhava with experience in Bharatanatyam, Bali, Garba Dandiya, Kathak, and Western dance forms.",
-    icon: FaMusic,
-    accent: "beyond-card-pink",
+    id: "01",
+    meta: "Team / SDM Kalavaibhava",
+    title: "Active Cultural Performer",
+    detail: "Part of the SDM Kalavaibhava team and involved in major cultural performances.",
   },
   {
-    title: "Events & Stage Performance",
-    text: "Performed at Dharmastala, Dharwad, Puttur, Ujire, and other cultural events including a one-hour Ramayana drama.",
-    icon: FaUsers,
-    accent: "beyond-card-orange",
+    id: "02",
+    meta: "Training / Dance Forms",
+    title: "Multi-Style Dance Training",
+    detail: "Learned Bharatanatyam, Bali, Garba Dandiya, Kathak, and Western dance forms.",
   },
   {
-    title: "Creative Interests",
-    text: "Enjoy video editing, UI/UX exploration, drawing, and painting as part of my creative process outside software.",
-    icon: FaPaintBrush,
-    accent: "beyond-card-purple",
+    id: "03",
+    meta: "Level / Recognition",
+    title: "State-Level Performer",
+    detail: "Recognized as a state-level dance performer through stage participation and competitions.",
   },
   {
-    title: "Continuous Learning",
-    text: "Reading, exploring new places, and staying curious helps me keep both technical and creative learning active.",
-    icon: FaBookOpen,
-    accent: "beyond-card-cyan",
+    id: "04",
+    meta: "Stage / Events",
+    title: "Major Event Performances",
+    detail: "Performed at Dharmastala, Dharwad, Puttur, Ujire, and other events, including a one-hour Ramayana drama.",
   },
 ];
 
@@ -38,38 +40,71 @@ function BeyondCode() {
       viewport={{ once: true, amount: 0.18 }}
     >
       <div className="site-shell">
-        <div className="section-heading section-heading-split">
-          <div>
-            <p className="section-eyebrow">Beyond Code</p>
-            <h2>Interests, activities and experiences beyond software development.</h2>
+        <div className="dance-showcase">
+          <div className="dance-header">
+            <p className="section-eyebrow">Beyond Code / Dance</p>
+            <h2 className="dance-title">
+              Built with discipline.
+              <br />
+              Proven on stage.
+            </h2>
           </div>
-          <p className="section-support">
-            Genuine creative, cultural, and learning experiences that reflect discipline, collaboration, and personal growth outside engineering.
-          </p>
-        </div>
 
-        <div className="beyond-compact-grid">
-          {cards.map((item, index) => {
-            const Icon = item.icon;
+          <div className="dance-orbit">
+            <div className="dance-rings" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </div>
 
-            return (
-              <motion.article
-                key={item.title}
-                className={`beyond-compact-card ${item.accent}`}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ delay: index * 0.05 }}
-                whileHover={{ y: -4 }}
-              >
-                <div className="beyond-compact-icon">
-                  <Icon />
-                </div>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </motion.article>
-            );
-          })}
+            <div className="dance-center">
+              <div className="dance-center-image">
+                <img src={danceArt} alt="Dance performance artwork" className="h-full w-full object-cover" loading="lazy" />
+              </div>
+              <p className="dance-center-note">
+                <FaMedal />
+                04 creative milestones
+              </p>
+            </div>
+
+            <div className="dance-grid">
+              {milestones.map((item, index) => (
+                <motion.article
+                  key={item.id}
+                  className="dance-milestone"
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ delay: index * 0.06 }}
+                >
+                  <p className="dance-meta">
+                    <span className="dance-number">{item.id}</span>
+                    {item.meta}
+                  </p>
+                  <h3>{item.title}</h3>
+                  <p className="dance-detail">{item.detail}</p>
+                  <span className="dance-line" aria-hidden="true" />
+                </motion.article>
+              ))}
+            </div>
+          </div>
+
+          <div className="dance-recognition">
+            <div className="dance-recognition-copy">
+              <p className="dance-meta">Special Recognition</p>
+              <h3>Honoured for cultural performance and team contribution.</h3>
+              <p className="dance-detail">
+                Stage performances across multiple locations helped shape confidence, creativity, and consistency.
+              </p>
+            </div>
+            <div className="dance-recognition-image">
+              <img src={danceTeam} alt="SDM Kalavaibhava group performance" className="h-full w-full object-cover" loading="lazy" />
+            </div>
+            <div className="dance-recognition-badge">
+              <FaStar />
+              Stage Journey
+            </div>
+          </div>
         </div>
       </div>
     </motion.section>

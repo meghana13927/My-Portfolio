@@ -1,32 +1,37 @@
 import { motion } from "framer-motion";
-import { FaEnvelope, FaFileAlt, FaGithub, FaLinkedin } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaLinkedin,
+  FaMapMarkerAlt,
+  FaPhone,
+  FaRegArrowAltCircleRight,
+} from "react-icons/fa";
 import resume from "../assets/resume/resume1.pdf";
 
-const links = [
+const contactItems = [
   {
+    icon: FaEnvelope,
     label: "Email",
     value: "meghameghana370@gmail.com",
     href: "mailto:meghameghana370@gmail.com",
-    icon: FaEnvelope,
   },
   {
-    label: "GitHub",
-    value: "github.com/meghana13927",
-    href: "https://github.com/meghana13927",
-    icon: FaGithub,
-  },
-  {
+    icon: FaLinkedin,
     label: "LinkedIn",
     value: "linkedin.com/in/megh13a2",
     href: "https://www.linkedin.com/in/megh13a2/",
-    icon: FaLinkedin,
   },
   {
+    icon: FaMapMarkerAlt,
+    label: "Location",
+    value: "Bangalore, Karnataka, India",
+  },
+  {
+    icon: FaPhone,
     label: "Resume",
-    value: "Download Resume",
+    value: "Download my CV",
     href: resume,
     download: true,
-    icon: FaFileAlt,
   },
 ];
 
@@ -40,53 +45,122 @@ function Contact() {
       viewport={{ once: true, amount: 0.18 }}
     >
       <div className="site-shell">
-        <div className="contact-light-shell">
+        <div className="contact-split">
           <motion.div
-            className="contact-light-copy"
+            className="contact-split-copy"
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
           >
-            <p className="section-eyebrow">Contact</p>
-            <h2>Let&apos;s Build Something Great Together</h2>
-            <p className="contact-light-text">
-              Open to software development roles, frontend opportunities, Laravel or PHP work, and practical product-focused web projects.
+            <p className="section-eyebrow">Contact / Start</p>
+            <h2 className="contact-split-title">
+              Let&apos;s talk
+              <br />
+              about
+              <br />
+              your next
+              <br />
+              project.
+            </h2>
+            <p className="contact-split-text">
+              Have a software role, custom frontend, or opportunity in mind? Share the details and I&apos;ll get back to you.
             </p>
 
-            <a href="mailto:meghameghana370@gmail.com" className="button-primary contact-main-button">
-              <FaEnvelope />
-              Get In Touch
-            </a>
+            <div className="contact-split-details">
+              {contactItems.map((item, index) => {
+                const Icon = item.icon;
+                const content = (
+                  <motion.div
+                    className="contact-split-item"
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ delay: index * 0.05 }}
+                  >
+                    <div className="contact-split-icon">
+                      <Icon />
+                    </div>
+                    <div>
+                      <p>{item.label}</p>
+                      <span>{item.value}</span>
+                    </div>
+                  </motion.div>
+                );
+
+                return item.href ? (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target={item.download ? undefined : item.href.startsWith("mailto:") ? undefined : "_blank"}
+                    rel={item.download ? undefined : item.href.startsWith("mailto:") ? undefined : "noreferrer"}
+                    download={item.download}
+                  >
+                    {content}
+                  </a>
+                ) : (
+                  <div key={item.label}>{content}</div>
+                );
+              })}
+            </div>
           </motion.div>
 
-          <div className="contact-link-grid">
-            {links.map((item, index) => {
-              const Icon = item.icon;
+          <motion.div
+            className="contact-form-shell"
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <form className="contact-form-grid" onSubmit={(event) => event.preventDefault()}>
+              <label className="contact-field">
+                <span>Your name *</span>
+                <input type="text" placeholder="Enter your name" aria-label="Your name" />
+              </label>
 
-              return (
-                <motion.a
-                  key={item.label}
-                  href={item.href}
-                  target={item.download ? undefined : item.href.startsWith("mailto:") ? undefined : "_blank"}
-                  rel={item.download ? undefined : item.href.startsWith("mailto:") ? undefined : "noreferrer"}
-                  download={item.download}
-                  className="contact-link-card"
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ delay: index * 0.06 }}
-                >
-                  <div className="contact-link-icon">
-                    <Icon />
-                  </div>
-                  <div>
-                    <p>{item.label}</p>
-                    <span>{item.value}</span>
-                  </div>
-                </motion.a>
-              );
-            })}
-          </div>
+              <label className="contact-field">
+                <span>Email *</span>
+                <input type="email" placeholder="you@company.com" aria-label="Email" />
+              </label>
+
+              <label className="contact-field">
+                <span>Phone *</span>
+                <input type="tel" placeholder="Enter phone number" aria-label="Phone number" />
+              </label>
+
+              <label className="contact-field">
+                <span>I&apos;m interested in *</span>
+                <select defaultValue="" aria-label="Interest area">
+                  <option value="" disabled>
+                    Select a service
+                  </option>
+                  <option value="software-developer-role">Software Developer Role</option>
+                  <option value="frontend-project">Frontend Project</option>
+                  <option value="full-stack-project">Full-Stack Project</option>
+                  <option value="react-work">React Development</option>
+                  <option value="laravel-php-work">Laravel / PHP Development</option>
+                </select>
+              </label>
+
+              <label className="contact-field contact-field-full">
+                <span>Country *</span>
+                <input type="text" placeholder="Enter your country" aria-label="Country" />
+              </label>
+
+              <label className="contact-field contact-field-full">
+                <span>Your message *</span>
+                <textarea rows="7" placeholder="Tell me about your project, role, or idea..." aria-label="Your message" />
+              </label>
+
+              <div className="contact-form-footer">
+                <button type="button" className="contact-submit">
+                  <span>Submit enquiry</span>
+                  <span className="contact-submit-icon">
+                    <FaRegArrowAltCircleRight />
+                  </span>
+                </button>
+                <p>Your enquiry is sent directly to my inbox. No email application opens.</p>
+              </div>
+            </form>
+          </motion.div>
         </div>
       </div>
     </motion.section>

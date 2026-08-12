@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FaCodeBranch, FaLaptopCode, FaLayerGroup, FaUserTie } from "react-icons/fa";
-import profile from "../assets/images/home-profile.png";
+import aboutImage from "../assets/images/image1.jpeg";
 
 const points = [
   {
@@ -52,7 +52,7 @@ function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
           >
-            <img src={profile} alt="Meghana H M profile portrait" className="about-visual-image" loading="lazy" />
+            <img src={aboutImage} alt="Meghana H M presentation photograph" className="about-visual-image" loading="lazy" />
           </motion.div>
 
           <motion.div
