@@ -1,3 +1,5 @@
+import ecommerceImage from "../assets/images/ecommerce.jpg";
+
 const projects = [
   {
     id: 1,
@@ -17,7 +19,7 @@ const projects = [
       "E-commerce website for Label Stop, showcasing products, collections, customer reviews, and online shopping features in a modern storefront experience.",
     tech: ["Laravel", "PHP", "MySQL", "JavaScript"],
     demo: "https://labelstop.co.uk/",
-    image: "/project-images/label-stop-ecommerce.png",
+    image: ecommerceImage,
   },
 ];
 
