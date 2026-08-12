@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaEnvelope, FaGithub, FaLinkedin, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
+import { FaEnvelope, FaLinkedin, FaMapMarkerAlt, FaPhone, FaRegArrowAltCircleRight } from "react-icons/fa";
 import resume from "../assets/resume/resume1.pdf";
 
 const contactItems = [
@@ -10,15 +10,22 @@ const contactItems = [
     href: "mailto:meghameghana370@gmail.com",
   },
   {
-    icon: FaPhone,
-    label: "Phone",
-    value: "+91 9353423669",
-    href: "tel:+919353423669",
+    icon: FaLinkedin,
+    label: "LinkedIn",
+    value: "linkedin.com/in/megh13a2",
+    href: "https://www.linkedin.com/in/megh13a2/",
   },
   {
     icon: FaMapMarkerAlt,
     label: "Location",
-    value: "Bangalore, Karnataka",
+    value: "Bangalore, Karnataka, India",
+  },
+  {
+    icon: FaPhone,
+    label: "Resume",
+    value: "Download my CV",
+    href: resume,
+    download: true,
   },
 ];
 
@@ -32,54 +39,103 @@ function Contact() {
       viewport={{ once: true }}
     >
       <div className="site-shell">
-        <div className="contact-reference">
-          <div>
+        <div className="contact-split">
+          <div className="contact-split-copy">
             <p className="section-eyebrow">Contact</p>
-            <h2 className="contact-reference-title">
-              Let&apos;s build something
+            <h2 className="contact-split-title">
+              Let&apos;s talk
               <br />
-              great together.
+              about your next
+              <br />
+              project.
             </h2>
-            <p className="contact-reference-text">
-              I&apos;m open to software developer, frontend, full-stack, React, and Laravel/PHP opportunities, as well as project collaboration.
+            <p className="contact-split-text">
+              Have a software role, custom frontend, backend requirement, or full-stack opportunity in mind? Share the details and I&apos;ll get back to you.
             </p>
-          </div>
 
-          <div className="contact-reference-grid">
-            {contactItems.map((item) => {
-              const Icon = item.icon;
-              const content = (
-                <div className="contact-reference-item">
-                  <Icon />
-                  <div>
-                    <p>{item.label}</p>
-                    <span>{item.value}</span>
+            <div className="contact-split-details">
+              {contactItems.map((item) => {
+                const Icon = item.icon;
+                const content = (
+                  <div className="contact-split-item">
+                    <div className="contact-split-icon">
+                      <Icon />
+                    </div>
+                    <div>
+                      <p>{item.label}</p>
+                      <span>{item.value}</span>
+                    </div>
                   </div>
-                </div>
-              );
+                );
 
-              return item.href ? (
-                <a key={item.label} href={item.href}>
-                  {content}
-                </a>
-              ) : (
-                <div key={item.label}>{content}</div>
-              );
-            })}
+                return item.href ? (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target={item.download ? undefined : "_blank"}
+                    rel={item.download ? undefined : "noreferrer"}
+                    download={item.download}
+                  >
+                    {content}
+                  </a>
+                ) : (
+                  <div key={item.label}>{content}</div>
+                );
+              })}
+            </div>
           </div>
 
-          <div className="contact-reference-links">
-            <a href="https://www.linkedin.com/in/megh13a2/" target="_blank" rel="noreferrer" className="button-secondary text-sm">
-              <FaLinkedin />
-              LinkedIn
-            </a>
-            <a href="https://github.com/meghana13927" target="_blank" rel="noreferrer" className="button-secondary text-sm">
-              <FaGithub />
-              GitHub
-            </a>
-            <a href={resume} download className="button-primary text-sm">
-              Resume
-            </a>
+          <div className="contact-form-shell">
+            <form className="contact-form-grid">
+              <label className="contact-field">
+                <span>Your name *</span>
+                <input type="text" placeholder="Enter your name" />
+              </label>
+
+              <label className="contact-field">
+                <span>Email *</span>
+                <input type="email" placeholder="you@company.com" />
+              </label>
+
+              <label className="contact-field">
+                <span>Phone *</span>
+                <input type="tel" placeholder="Enter phone number" />
+              </label>
+
+              <label className="contact-field">
+                <span>I&apos;m interested in *</span>
+                <select defaultValue="">
+                  <option value="" disabled>
+                    Select a service
+                  </option>
+                  <option value="software-developer-role">Software Developer Role</option>
+                  <option value="frontend-project">Frontend Project</option>
+                  <option value="full-stack-project">Full-Stack Project</option>
+                  <option value="react-work">React Development</option>
+                  <option value="laravel-php-work">Laravel / PHP Development</option>
+                </select>
+              </label>
+
+              <label className="contact-field contact-field-full">
+                <span>Country *</span>
+                <input type="text" placeholder="Enter your country" />
+              </label>
+
+              <label className="contact-field contact-field-full">
+                <span>Your message *</span>
+                <textarea rows="7" placeholder="Tell me about your project, role, or idea..." />
+              </label>
+
+              <div className="contact-form-footer">
+                <button type="submit" className="contact-submit">
+                  <span>Submit enquiry</span>
+                  <span className="contact-submit-icon">
+                    <FaRegArrowAltCircleRight />
+                  </span>
+                </button>
+                <p>Your enquiry is sent directly to my inbox. No email application opens.</p>
+              </div>
+            </form>
           </div>
         </div>
       </div>

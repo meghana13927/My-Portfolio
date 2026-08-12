@@ -5,7 +5,7 @@ const points = [
   {
     icon: FaLaptopCode,
     title: "Developer Background",
-    text: "I work across frontend, backend, and testing with practical experience in React, PHP, Laravel, JavaScript, and MySQL.",
+    text: "I work across frontend, backend, and testing with practical experience in React, PHP, Laravel, Java, JavaScript, Shopify, Figma, and MySQL.",
   },
   {
     icon: FaLayerGroup,
@@ -40,17 +40,17 @@ function About() {
             <h2>Developer profile with product and engineering focus.</h2>
           </div>
           <p className="section-support">
-            Full-stack developer from Bangalore with experience in application development, testing, and backend-focused delivery.
+            Full-stack developer from Bangalore with experience in application development, testing, backend-focused delivery, Shopify work, and design collaboration with Figma.
           </p>
         </div>
 
         <div className="reference-grid">
           <article className="about-lead">
             <p>
-              I am a software developer who enjoys building practical applications that are clean on the surface and reliable under the hood. My work combines frontend development, backend logic, API integration, and database-driven features.
+              I am a software developer who enjoys building practical applications that are clean on the surface and reliable under the hood. My work combines frontend development, backend logic, API integration, database-driven features, and e-commerce-oriented workflows.
             </p>
             <p>
-              With experience across development and QA, I bring attention to both functionality and usability while working on business-focused web applications.
+              With experience across development and QA, I bring attention to both functionality and usability while working on business-focused web applications using tools such as Java, Shopify, and Figma alongside my core development stack.
             </p>
           </article>
 

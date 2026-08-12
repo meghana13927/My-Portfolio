@@ -9,7 +9,7 @@ const statItems = [
   ["01", "creative portfolio combining engineering and performance"],
 ];
 
-const coreStack = ["React", "Laravel", "PHP", "JavaScript", "MySQL", "REST APIs", "GraphQL"];
+const coreStack = ["React", "Laravel", "PHP", "Java", "Shopify", "Figma", "MySQL", "REST APIs"];
 
 function Hero() {
   return (
@@ -29,7 +29,7 @@ function Hero() {
               for modern web products.
             </h1>
             <p className="hero-reference-text">
-              Full stack developer focused on clean interfaces, reliable backend systems, and practical product execution with React, PHP, Laravel, MySQL, REST APIs, and GraphQL.
+              Full stack developer focused on clean interfaces, reliable backend systems, and practical product execution with React, PHP, Laravel, Java, Shopify, Figma, MySQL, and REST APIs.
             </p>
 
             <div className="hero-stack-row" aria-label="Core technologies">
