@@ -7,7 +7,7 @@ const projects = [
       "Official website for St. Joseph's School, providing information about the school, academics, facilities, admissions, and events.",
     tech: ["Laravel", "PHP", "MySQL", "JavaScript"],
     demo: "https://sjsjj.org/",
-    image: "/project-images/st-joseph-school-preview.svg",
+    image: "/project-images/st-joseph-school-card.svg",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const projects = [
       "E-commerce website for Label Stop, showcasing products, collections, customer reviews, and online shopping features in a modern storefront experience.",
     tech: ["Laravel", "PHP", "MySQL", "JavaScript"],
     demo: "https://labelstop.co.uk/",
-    image: "/project-images/label-stop-preview.svg",
+    image: "/project-images/label-stop-card.svg",
   },
 ];
 
