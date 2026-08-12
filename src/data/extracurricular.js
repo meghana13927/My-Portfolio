@@ -1,45 +1,26 @@
-import {
-  FaPalette,
-  FaVideo,
-  FaMusic,
-  FaPlaneDeparture,
-} from "react-icons/fa";
+import { FaPalette, FaPlaneDeparture, FaVideo } from "react-icons/fa";
 
 const extracurricular = [
   {
     id: 1,
-    title: "Video Editing & UI/UX Design",
+    title: "Video Editing & UI/UX",
     icon: FaVideo,
-    color: "from-pink-500 to-purple-600",
-    description:
-      "Create engaging videos and design modern user interfaces using Figma, focusing on creativity and user experience.",
+    color: "from-pink-500 to-rose-500",
+    description: "Creating simple visuals, videos, and interface ideas.",
   },
-
   {
     id: 2,
     title: "Drawing & Painting",
     icon: FaPalette,
-    color: "from-orange-500 to-red-500",
-    description:
-      "Passionate about sketching and painting, expressing creativity through traditional and digital artwork.",
+    color: "from-orange-500 to-amber-500",
+    description: "Enjoy sketching and painting in my free time.",
   },
-
   {
     id: 3,
-    title: "Dance Performer",
-    icon: FaMusic,
-    color: "from-cyan-500 to-blue-600",
-    description:
-      "Performed with Kalavaibhava at SDM College, Ujire. Trained in Classical, Western, Kathak, Garba, Dandiya and Bollywood dance forms.",
-  },
-
-  {
-    id: 4,
     title: "Travel & Reading",
     icon: FaPlaneDeparture,
-    color: "from-green-500 to-emerald-600",
-    description:
-      "Enjoy travelling to explore new cultures and reading books that inspire personal growth and continuous learning.",
+    color: "from-emerald-500 to-green-500",
+    description: "Exploring new places and reading for fresh ideas.",
   },
 ];
 

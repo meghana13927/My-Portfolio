@@ -1,17 +1,14 @@
-﻿import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import LoadingScreen from "./components/LoadingScreen";
-import ParticlesBackground from "./components/ParticlesBackground";
+import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
-import Resume from "./components/Resume";
 import Education from "./components/Education";
+import DanceSection from "./components/DanceSection";
 import ExtraCurricular from "./components/ExtraCurricular";
-import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import CursorGlow from "./components/CursorGlow";
 import BackToTop from "./components/BackToTop";
 
 function App() {
@@ -20,7 +17,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1800);
+    }, 1200);
 
     return () => clearTimeout(timer);
   }, []);
@@ -30,19 +27,16 @@ function App() {
   }
 
   return (
-    <div className="app-shell text-white">
-      <ParticlesBackground />
-      <CursorGlow />
+    <div className="app-shell">
+      <Navbar />
       <BackToTop />
       <Hero />
-      <About />
       <Skills />
       <Projects />
       <Experience />
-      <Resume />
       <Education />
+      <DanceSection />
       <ExtraCurricular />
-      <Contact />
       <Footer />
     </div>
   );

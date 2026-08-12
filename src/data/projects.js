@@ -1,10 +1,9 @@
-﻿const projects = [
+const projects = [
   {
     id: 1,
     type: "Portfolio Website",
     title: "My Portfolio",
-    description:
-      "A modern responsive personal portfolio built with React, Vite, and Tailwind CSS to showcase my projects, skills, education, certifications, and achievements with polished animations and elegant UI presentation.",
+    description: "A responsive personal portfolio built with React, Vite, and Tailwind CSS.",
     tech: ["React", "Vite", "Tailwind CSS", "JavaScript"],
     github: "https://github.com/meghana13927/My-Portfolio",
     demo: "https://my-portfolio-swart-seven-22.vercel.app",
@@ -14,8 +13,7 @@
     id: 2,
     type: "Full Stack Platform",
     title: "InfluenceHub",
-    description:
-      "A full-stack influencer marketing platform connecting brands and influencers for campaign creation, collaboration workflows, application management, and campaign operations.",
+    description: "A platform for brand and influencer collaboration with campaign workflows.",
     tech: ["Laravel", "PHP", "Blade", "MySQL"],
     github: "https://github.com/meghana13927/InfluenceHub---influencer-brand-",
     demo: "https://github.com/meghana13927/InfluenceHub---influencer-brand-",
@@ -25,8 +23,7 @@
     id: 3,
     type: "Enterprise Module",
     title: "MIS File Management System",
-    description:
-      "An enterprise file management module built using Laravel, PHP, GraphQL, and MySQL with workflow tracking, file lifecycle handling, approvals, attachments, search, and scalable MIS architecture.",
+    description: "A file workflow system with approvals, search, and lifecycle tracking.",
     tech: ["Laravel", "PHP", "GraphQL", "MySQL"],
     github: "https://github.com/meghana13927/MIS-file-management-system",
     demo: "https://github.com/meghana13927/MIS-file-management-system",
@@ -36,8 +33,7 @@
     id: 4,
     type: "Web Application",
     title: "School Management System",
-    description:
-      "A school management application for student records, class workflows, attendance tracking, fee management, and administrative operations in one structured system.",
+    description: "A structured system for student records, attendance, fees, and admin tasks.",
     tech: ["Laravel", "PHP", "MySQL", "Bootstrap"],
     github: "https://github.com/meghana13927/Anekal-school-management-system",
     demo: "https://github.com/meghana13927/Anekal-school-management-system",
@@ -47,8 +43,7 @@
     id: 5,
     type: "Web Application",
     title: "Blood Bank Management System",
-    description:
-      "A web-based blood bank management system focused on donor records, request handling, blood inventory, and smoother hospital coordination.",
+    description: "A web application for donor records, requests, and blood inventory handling.",
     tech: ["PHP", "MySQL", "HTML", "CSS"],
     github: "https://github.com/meghana13927/Web-miniproject",
     demo: "https://github.com/meghana13927/Web-miniproject",

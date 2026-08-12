@@ -1,16 +1,9 @@
-﻿function Footer() {
+function Footer() {
   return (
-    <footer className="border-t border-cyan-300/10 bg-slate-950/55 px-6 py-12 backdrop-blur-sm">
-      <div className="mx-auto flex max-w-7xl flex-col gap-4 text-center lg:flex-row lg:items-center lg:justify-between lg:text-left">
-        <div>
-          <h2 className="text-xl font-extrabold uppercase tracking-[0.18em] text-slate-100">
-            Meghana Portfolio
-          </h2>
-          <p className="mt-3 max-w-xl text-slate-400">
-            A full-stack portfolio built to feel more like a modern product experience than a traditional resume website.
-          </p>
-        </div>
-        <p className="text-sm text-slate-500">© 2026 All Rights Reserved.</p>
+    <footer className="border-t border-stone-200 px-5 py-10 sm:px-6 lg:px-8">
+      <div className="site-shell flex flex-col gap-2 text-center sm:text-left">
+        <h2 className="text-lg font-bold uppercase tracking-[0.18em] text-slate-900">Meghana Portfolio</h2>
+        <p className="text-sm text-slate-500">Simple, responsive, and focused on work that matters.</p>
       </div>
     </footer>
   );
