@@ -26,36 +26,37 @@ function Contact() {
   return (
     <motion.section
       id="contact"
-      className="section-shell px-5 py-18 sm:px-6 lg:px-8"
+      className="section-shell px-5 py-16 sm:px-6 lg:px-8"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
       <div className="site-shell">
-        <div className="section-heading">
-          <p className="section-eyebrow">Contact</p>
-          <h2>Let&apos;s connect.</h2>
-          <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600">
-            For jobs, collaborations, or project discussions, you can reach me here.
-          </p>
-        </div>
+        <div className="contact-reference">
+          <div>
+            <p className="section-eyebrow">Contact</p>
+            <h2 className="contact-reference-title">
+              Open to roles,
+              <br />
+              projects, and collaboration.
+            </h2>
+          </div>
 
-        <div className="soft-card">
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="contact-reference-grid">
             {contactItems.map((item) => {
               const Icon = item.icon;
               const content = (
-                <div className="contact-tile">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-rose-50 text-rose-500">
-                    <Icon />
+                <div className="contact-reference-item">
+                  <Icon />
+                  <div>
+                    <p>{item.label}</p>
+                    <span>{item.value}</span>
                   </div>
-                  <p className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">{item.label}</p>
-                  <p className="mt-2 text-sm font-medium text-slate-700">{item.value}</p>
                 </div>
               );
 
               return item.href ? (
-                <a key={item.label} href={item.href} className="block">
+                <a key={item.label} href={item.href}>
                   {content}
                 </a>
               ) : (
@@ -64,7 +65,7 @@ function Contact() {
             })}
           </div>
 
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className="contact-reference-links">
             <a href="https://www.linkedin.com/in/megh13a2/" target="_blank" rel="noreferrer" className="button-secondary text-sm">
               <FaLinkedin />
               LinkedIn

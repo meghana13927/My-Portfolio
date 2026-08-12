@@ -5,18 +5,23 @@ function Education() {
   return (
     <motion.section
       id="education"
-      className="section-shell px-5 py-18 sm:px-6 lg:px-8"
+      className="section-shell px-5 py-16 sm:px-6 lg:px-8"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
       <div className="site-shell">
-        <div className="section-heading">
-          <p className="section-eyebrow">Education</p>
-          <h2>Simple academic background.</h2>
+        <div className="section-heading section-heading-split">
+          <div>
+            <p className="section-eyebrow">Education</p>
+            <h2>Academic milestones in a simpler format.</h2>
+          </div>
+          <p className="section-support">
+            Focused summary of degree, institution, year, and score.
+          </p>
         </div>
 
-        <div className="grid gap-4">
+        <div className="timeline-reference">
           {education.map((item, index) => (
             <motion.article
               key={item.id}
@@ -24,17 +29,15 @@ function Education() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.06 }}
               viewport={{ once: true }}
-              className="soft-card"
+              className="timeline-reference-row"
             >
-              <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-                <div>
-                  <h3 className="text-lg font-semibold text-slate-900">{item.degree}</h3>
-                  <p className="mt-1 text-sm text-slate-600">{item.college}</p>
+              <div className="timeline-reference-date">{item.year}</div>
+              <div className="timeline-reference-body">
+                <div className="timeline-reference-head">
+                  <h3>{item.degree}</h3>
+                  <span>{item.score}</span>
                 </div>
-                <div className="text-sm text-slate-500 md:text-right">
-                  <p>{item.year}</p>
-                  <p className="mt-1 font-medium text-rose-500">{item.score}</p>
-                </div>
+                <p>{item.college}</p>
               </div>
             </motion.article>
           ))}

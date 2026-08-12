@@ -5,53 +5,51 @@ function Skills() {
   return (
     <motion.section
       id="skills"
-      className="section-shell px-5 py-18 sm:px-6 lg:px-8"
+      className="section-shell px-5 py-16 sm:px-6 lg:px-8"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
       <div className="site-shell">
-        <div className="section-heading">
-          <p className="section-eyebrow">Technical Skills</p>
-          <h2>Tools I use to build and deliver projects.</h2>
-          <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600">
-            A practical mix of frontend, backend, testing, and tools for real project delivery.
+        <div className="section-heading section-heading-split">
+          <div>
+            <p className="section-eyebrow">Technical Skills</p>
+            <h2>Stack built for real product delivery.</h2>
+          </div>
+          <p className="section-support">
+            Frontend, backend, testing, and tooling arranged in a cleaner skill system.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="reference-grid">
           {skills.map((category, index) => (
-            <motion.div
+            <motion.article
               key={category.title}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.08 }}
+              transition={{ delay: index * 0.06 }}
               viewport={{ once: true }}
-              className="skills-card soft-card"
+              className="reference-panel"
             >
-              <div className="mb-6 flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-rose-400">Category</p>
-                  <h3 className="mt-2 text-xl font-semibold text-slate-900">{category.title}</h3>
-                </div>
-                <span className="rounded-full bg-rose-50 px-3 py-1 text-xs font-semibold text-rose-500">
-                  {category.items.length} skills
-                </span>
+              <div className="reference-panel-top">
+                <p className="reference-label">Category</p>
+                <span>{category.items.length} items</span>
               </div>
+              <h3 className="reference-panel-title">{category.title}</h3>
 
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              <div className="skills-reference-list">
                 {category.items.map((skill) => {
                   const Icon = skill.icon;
 
                   return (
-                    <div key={skill.name} className="skill-tile">
+                    <div key={skill.name} className="skill-reference-tile">
                       <Icon className={`text-3xl ${skill.color}`} />
-                      <span className="mt-3 text-sm font-medium text-slate-700">{skill.name}</span>
+                      <span>{skill.name}</span>
                     </div>
                   );
                 })}
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>
