@@ -171,6 +171,235 @@ p {
     #fff;
 }
 
+.dance-showcase {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 2rem;
+  background:
+    radial-gradient(circle at center, rgba(59, 130, 246, 0.06), transparent 22%),
+    linear-gradient(180deg, #fff 0%, #f8fafc 100%);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+  padding: 1.5rem;
+}
+
+.dance-showcase::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, #14b8a6, #f59e0b);
+}
+
+.dance-header {
+  position: relative;
+  z-index: 1;
+}
+
+.dance-title {
+  margin-top: 0.75rem;
+  max-width: 700px;
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.dance-orbit {
+  position: relative;
+  margin-top: 2rem;
+  min-height: 820px;
+}
+
+.dance-rings {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: min(100%, 720px);
+  aspect-ratio: 1;
+  pointer-events: none;
+}
+
+.dance-rings span {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 9999px;
+}
+
+.dance-rings span:nth-child(2) {
+  inset: 14%;
+}
+
+.dance-rings span:nth-child(3) {
+  inset: 28%;
+}
+
+.dance-center {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  width: min(100%, 360px);
+  text-align: center;
+}
+
+.dance-center-image {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 320px;
+  overflow: hidden;
+  border-radius: 2rem;
+  border: 10px solid rgba(255, 255, 255, 0.92);
+  box-shadow: 0 22px 50px rgba(15, 23, 42, 0.14);
+}
+
+.dance-center-note {
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.dance-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: space-between;
+  min-height: 820px;
+}
+
+.dance-milestone {
+  position: relative;
+  max-width: 420px;
+  padding: 0.5rem 0 1rem;
+}
+
+.dance-milestone:nth-child(1) {
+  align-self: start;
+  justify-self: start;
+  margin-top: 5rem;
+}
+
+.dance-milestone:nth-child(2) {
+  align-self: end;
+  justify-self: start;
+  margin-bottom: 8rem;
+}
+
+.dance-milestone:nth-child(3) {
+  align-self: start;
+  justify-self: end;
+  margin-top: 6rem;
+}
+
+.dance-milestone:nth-child(4) {
+  align-self: end;
+  justify-self: end;
+  margin-bottom: 9rem;
+}
+
+.dance-milestone-right {
+  text-align: left;
+}
+
+.dance-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.dance-number {
+  font-size: 3.25rem;
+  line-height: 1;
+  letter-spacing: -0.08em;
+  color: rgba(148, 163, 184, 0.35);
+}
+
+.dance-milestone h3,
+.dance-recognition h3 {
+  margin-top: 0.75rem;
+  font-size: clamp(1.25rem, 2vw, 2rem);
+  line-height: 1.1;
+}
+
+.dance-detail {
+  margin-top: 0.75rem;
+  max-width: 34ch;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #64748b;
+}
+
+.dance-line {
+  display: block;
+  margin-top: 1rem;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(203, 213, 225, 0.9), rgba(203, 213, 225, 0.2));
+}
+
+.dance-recognition {
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+  border-top: 1px solid rgba(203, 213, 225, 0.7);
+  padding-top: 1.5rem;
+}
+
+.dance-recognition-copy {
+  max-width: 520px;
+}
+
+.dance-recognition-image {
+  overflow: hidden;
+  border-radius: 1.5rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1);
+}
+
+.dance-recognition-image img {
+  min-height: 220px;
+}
+
+.dance-recognition-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0f172a;
+}
+
+.contact-tile {
+  height: 100%;
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  background: linear-gradient(180deg, #fff, #fafaf9);
+  padding: 1.25rem;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-tile:hover {
+  transform: translateY(-3px);
+  border-color: #fda4af;
+  box-shadow: 0 16px 30px rgba(244, 63, 94, 0.1);
+}
+
 .button-primary,
 .button-secondary {
   display: inline-flex;
@@ -212,5 +441,80 @@ p {
 
   .soft-card {
     padding: 1.75rem;
+  }
+
+  .dance-showcase {
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dance-recognition {
+    grid-template-columns: 1.05fr 0.95fr auto;
+  }
+}
+
+@media (max-width: 1023px) {
+  .dance-orbit {
+    min-height: auto;
+  }
+
+  .dance-rings,
+  .dance-center {
+    position: relative;
+    inset: auto;
+    transform: none;
+  }
+
+  .dance-rings {
+    width: min(100%, 420px);
+    margin: 0 auto;
+  }
+
+  .dance-center {
+    width: 100%;
+    margin-top: -18rem;
+    margin-bottom: 2rem;
+  }
+
+  .dance-grid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .dance-milestone,
+  .dance-milestone:nth-child(1),
+  .dance-milestone:nth-child(2),
+  .dance-milestone:nth-child(3),
+  .dance-milestone:nth-child(4) {
+    max-width: none;
+    margin: 0;
+    align-self: auto;
+    justify-self: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .dance-showcase {
+    padding: 1.25rem;
+  }
+
+  .dance-center {
+    margin-top: -14rem;
+  }
+
+  .dance-center-image {
+    max-width: 240px;
+    border-width: 8px;
+  }
+
+  .dance-number {
+    font-size: 2.5rem;
+  }
+
+  .dance-recognition-image img {
+    min-height: 180px;
   }
 }

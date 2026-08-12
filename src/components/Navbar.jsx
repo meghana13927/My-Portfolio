@@ -9,6 +9,7 @@ const navItems = [
   { label: "Education", href: "#education" },
   { label: "Dance", href: "#dance" },
   { label: "Activities", href: "#activities" },
+  { label: "Contact", href: "#contact" },
 ];
 
 function Navbar() {

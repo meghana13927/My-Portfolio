@@ -8,6 +8,7 @@ import Experience from "./components/Experience";
 import Education from "./components/Education";
 import DanceSection from "./components/DanceSection";
 import ExtraCurricular from "./components/ExtraCurricular";
+import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop";
 
@@ -37,6 +38,7 @@ function App() {
       <Education />
       <DanceSection />
       <ExtraCurricular />
+      <Contact />
       <Footer />
     </div>
   );
