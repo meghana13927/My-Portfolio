@@ -140,14 +140,22 @@ function Projects() {
         <div className="section-heading section-heading-split">
           <div>
             <p className="section-eyebrow">Projects</p>
-            <h2>Selected builds and product work.</h2>
+            <h2>Project showcase with the same clean visual system.</h2>
           </div>
           <p className="section-support">
-            Prioritized project presentation with one featured build and supporting case studies.
+            Featured work first, followed by strong supporting builds in the same premium minimal style.
           </p>
         </div>
 
-        <article className="featured-project">
+        <div className="project-announcement-bar" aria-hidden="true">
+          <div className="project-announcement-track">
+            {[...projects, ...projects].map((project, index) => (
+              <span key={`${project.title}-${index}`}>{project.title}</span>
+            ))}
+          </div>
+        </div>
+
+        <article className="project-showcase-card featured-project">
           <div className="featured-project-image">
             <img src={featuredProject.image} alt={featuredProject.title} className="h-full w-full object-cover" />
           </div>
@@ -176,7 +184,7 @@ function Projects() {
           </div>
         </article>
 
-        <div className="reference-list mt-10">
+        <div className="project-showcase-grid mt-8">
           {visibleProjects.map((project, index) => (
             <motion.article
               key={project.id}
@@ -184,18 +192,14 @@ function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="reference-row"
+              className="project-showcase-card project-showcase-small"
             >
-              <div className="reference-row-meta">
-                <span>{String(project.id).padStart(2, "0")}</span>
-                <p>{project.type}</p>
-              </div>
-
               <div className="reference-row-image">
                 <img src={project.image} alt={project.title} className="h-full w-full object-cover" />
               </div>
 
-              <div className="reference-row-copy">
+              <div className="project-showcase-small-copy">
+                <p className="reference-label">{project.type}</p>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <div className="reference-tag-row">
@@ -203,20 +207,19 @@ function Projects() {
                     <span key={tech}>{tech}</span>
                   ))}
                 </div>
-              </div>
-
-              <div className="reference-row-links">
-                <button type="button" onClick={() => setSelectedProject(project)} className="button-secondary text-sm">
-                  View Details
-                </button>
-                <a href={project.github} target="_blank" rel="noreferrer" className="button-secondary text-sm">
-                  <FaGithub />
-                  GitHub
-                </a>
-                <a href={project.demo} target="_blank" rel="noreferrer" className="button-primary text-sm">
-                  Live
-                  <FaExternalLinkAlt />
-                </a>
+                <div className="mt-5 flex flex-wrap gap-3">
+                  <button type="button" onClick={() => setSelectedProject(project)} className="button-secondary text-sm">
+                    View Details
+                  </button>
+                  <a href={project.github} target="_blank" rel="noreferrer" className="button-secondary text-sm">
+                    <FaGithub />
+                    GitHub
+                  </a>
+                  <a href={project.demo} target="_blank" rel="noreferrer" className="button-primary text-sm">
+                    Live
+                    <FaExternalLinkAlt />
+                  </a>
+                </div>
               </div>
             </motion.article>
           ))}
