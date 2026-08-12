@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaArrowRight, FaFileAlt, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaArrowRight, FaEnvelope, FaFileAlt, FaGithub, FaLinkedin } from "react-icons/fa";
 import profile from "../assets/images/home-profile.png";
 import resume from "../assets/resume/resume1.pdf";
 
@@ -8,6 +8,8 @@ const statItems = [
   ["05", "featured projects with practical product delivery"],
   ["01", "creative portfolio combining engineering and performance"],
 ];
+
+const coreStack = ["React", "Laravel", "PHP", "JavaScript", "MySQL", "REST APIs", "GraphQL"];
 
 function Hero() {
   return (
@@ -22,13 +24,19 @@ function Hero() {
           <div className="hero-reference-copy">
             <p className="section-eyebrow">Meghana H M / Portfolio</p>
             <h1 className="hero-reference-title">
-              Built with code.
+              Software Developer
               <br />
-              Grounded in clarity.
+              for modern web products.
             </h1>
             <p className="hero-reference-text">
               Full stack developer focused on clean interfaces, reliable backend systems, and practical product execution with React, PHP, Laravel, MySQL, REST APIs, and GraphQL.
             </p>
+
+            <div className="hero-stack-row" aria-label="Core technologies">
+              {coreStack.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
 
             <div className="hero-reference-actions">
               <a href="#projects" className="button-primary">
@@ -38,6 +46,10 @@ function Hero() {
               <a href={resume} download className="button-secondary">
                 <FaFileAlt />
                 Resume
+              </a>
+              <a href="#contact" className="button-secondary">
+                <FaEnvelope />
+                Contact Me
               </a>
             </div>
 

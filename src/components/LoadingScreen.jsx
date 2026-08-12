@@ -15,7 +15,7 @@ function LoadingScreen() {
           <motion.div
             initial={{ x: "-100%" }}
             animate={{ x: "0%" }}
-            transition={{ duration: 1, ease: "easeInOut" }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             className="h-full rounded-full bg-rose-400"
           />
         </div>

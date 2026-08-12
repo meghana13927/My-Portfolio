@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import LoadingScreen from "./components/LoadingScreen";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import About from "./components/About";
+import WhatIBuild from "./components/WhatIBuild";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
@@ -18,7 +20,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1200);
+    }, 600);
 
     return () => clearTimeout(timer);
   }, []);
@@ -31,14 +33,18 @@ function App() {
     <div className="app-shell">
       <Navbar />
       <BackToTop />
-      <Hero />
-      <Skills />
-      <Projects />
-      <Experience />
-      <Education />
-      <DanceSection />
-      <ExtraCurricular />
-      <Contact />
+      <main>
+        <Hero />
+        <About />
+        <WhatIBuild />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Education />
+        <DanceSection />
+        <ExtraCurricular />
+        <Contact />
+      </main>
       <Footer />
     </div>
   );

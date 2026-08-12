@@ -36,10 +36,13 @@ function Contact() {
           <div>
             <p className="section-eyebrow">Contact</p>
             <h2 className="contact-reference-title">
-              Open to roles,
+              Let&apos;s build something
               <br />
-              projects, and collaboration.
+              great together.
             </h2>
+            <p className="contact-reference-text">
+              I&apos;m open to software developer, frontend, full-stack, React, and Laravel/PHP opportunities, as well as project collaboration.
+            </p>
           </div>
 
           <div className="contact-reference-grid">
