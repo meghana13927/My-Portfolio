@@ -19,7 +19,7 @@ const points = [
   },
   {
     icon: FaUserTie,
-    title: "Roles I’m Targeting",
+    title: "Roles I'm Targeting",
     text: "I am looking for Software Developer, Frontend Developer, Full-Stack Developer, React Developer, and Laravel/PHP Developer roles.",
   },
 ];
@@ -28,10 +28,10 @@ function About() {
   return (
     <motion.section
       id="about"
-      className="section-shell px-5 py-16 sm:px-6 lg:px-8"
+      className="section-shell section-accent-blue px-5 py-16 sm:px-6 lg:px-8"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.18 }}
     >
       <div className="site-shell">
         <div className="section-heading section-heading-split">
@@ -44,38 +44,48 @@ function About() {
           </p>
         </div>
 
-        <div className="reference-grid">
-          <article className="about-lead">
+        <div className="about-grid">
+          <motion.article
+            className="about-story glass-card"
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <p>
               I am a software developer who enjoys building practical applications that are clean on the surface and reliable under the hood. My work combines frontend development, backend logic, API integration, database-driven features, and e-commerce-oriented workflows.
             </p>
             <p>
               With experience across development and QA, I bring attention to both functionality and usability while working on business-focused web applications using tools such as Java, Shopify, and Figma alongside my core development stack.
             </p>
-          </article>
+          </motion.article>
 
-          <div className="reference-grid">
+          <motion.div
+            className="about-card-grid"
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {points.map((item, index) => {
               const Icon = item.icon;
 
               return (
                 <motion.article
                   key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
+                  className="about-feature-card"
+                  initial={{ opacity: 0, y: 18 }}
                   whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
                   transition={{ delay: index * 0.06 }}
-                  viewport={{ once: true }}
-                  className="reference-panel"
                 >
                   <div className="about-icon">
                     <Icon />
                   </div>
-                  <h3 className="reference-panel-title mt-4">{item.title}</h3>
-                  <p className="reference-panel-text">{item.text}</p>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
                 </motion.article>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </div>
     </motion.section>

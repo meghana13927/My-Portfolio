@@ -2,7 +2,7 @@ import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className="border-t border-stone-200 px-5 py-10 sm:px-6 lg:px-8">
+    <footer className="footer-shell px-5 py-10 sm:px-6 lg:px-8">
       <div className="site-shell footer-reference">
         <div>
           <p className="section-eyebrow">Portfolio</p>

@@ -6,10 +6,10 @@ function Projects() {
   return (
     <motion.section
       id="projects"
-      className="section-shell px-5 py-16 sm:px-6 lg:px-8"
+      className="section-shell section-accent-violet px-5 py-16 sm:px-6 lg:px-8"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.18 }}
     >
       <div className="site-shell">
         <div className="section-heading section-heading-split">
@@ -18,7 +18,7 @@ function Projects() {
             <h2>Selected work.</h2>
           </div>
           <p className="section-support">
-            Compact project highlights from my professional web development work.
+            Compact project highlights from my professional web development work with live links and cleaner visual emphasis.
           </p>
         </div>
 
@@ -29,12 +29,17 @@ function Projects() {
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.08 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -6 }}
+              viewport={{ once: true, amount: 0.2 }}
+              whileHover={{ y: -8 }}
               className="single-project-card"
             >
               <div className="single-project-image">
-                <img src={project.image} alt={`Preview of the ${project.title} website`} className="h-full w-full object-cover" />
+                <img
+                  src={project.image}
+                  alt={`Preview of the ${project.title} website`}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
               </div>
 
               <div className="single-project-copy">
@@ -48,7 +53,7 @@ function Projects() {
                   ))}
                 </div>
 
-                <div className="mt-5">
+                <div className="project-card-actions">
                   <a href={project.demo} target="_blank" rel="noreferrer" className="button-primary text-sm">
                     Live Website
                     <FaExternalLinkAlt />

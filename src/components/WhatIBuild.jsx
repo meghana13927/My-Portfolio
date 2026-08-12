@@ -38,10 +38,10 @@ function WhatIBuild() {
   return (
     <motion.section
       id="build"
-      className="section-shell px-5 py-16 sm:px-6 lg:px-8"
+      className="section-shell section-accent-cyan px-5 py-16 sm:px-6 lg:px-8"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.18 }}
     >
       <div className="site-shell">
         <div className="section-heading section-heading-split">
@@ -64,14 +64,15 @@ function WhatIBuild() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.2 }}
                 className="build-card"
+                whileHover={{ y: -6 }}
               >
                 <div className="about-icon">
                   <Icon />
                 </div>
-                <h3 className="reference-panel-title mt-4">{item.title}</h3>
-                <p className="reference-panel-text">{item.text}</p>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
               </motion.article>
             );
           })}

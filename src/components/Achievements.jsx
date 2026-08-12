@@ -1,38 +1,84 @@
-﻿import achievements from "../data/achievements";
 import { motion } from "framer-motion";
-import { FaTrophy } from "react-icons/fa";
+import { FaArrowRight, FaCertificate, FaTrophy } from "react-icons/fa";
+import achievements from "../data/achievements";
+import certificates from "../data/certificates";
 
 function Achievements() {
   return (
-    <motion.section id="achievements" className="section-shell px-6 py-28 lg:px-8" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-      <div className="mx-auto max-w-7xl">
-        <div className="section-heading">
-          <span className="section-eyebrow">Achievements</span>
-          <h2 className="mt-5">
-            Milestones that reflect <span className="accent-text">momentum, curiosity, and consistency</span>
-          </h2>
-          <p>
-            These achievements show the discipline behind my learning journey and the drive I bring to growth in both academics and technology.
+    <motion.section
+      id="achievements"
+      className="section-shell section-accent-cyan px-5 py-16 sm:px-6 lg:px-8"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.18 }}
+    >
+      <div className="site-shell">
+        <div className="section-heading section-heading-split">
+          <div>
+            <p className="section-eyebrow">Achievements & Certifications</p>
+            <h2>Real milestones from learning, internships, and hands-on delivery.</h2>
+          </div>
+          <p className="section-support">
+            This section uses only the achievements and certifications already present in the portfolio data.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 [perspective:1800px]">
-          {achievements.map((item, index) => (
-            <motion.div
-              key={item.id}
-              className="pro-card panel-3d tilt-flat rounded-[2rem] p-8"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.08 }}
-              viewport={{ once: true }}
-            >
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-300/12 text-2xl text-amber-100">
-                <FaTrophy />
-              </div>
-              <h3 className="mt-6 text-2xl font-bold text-slate-50">{item.title}</h3>
-              <p className="mt-4 leading-7 text-slate-300">{item.description}</p>
-            </motion.div>
-          ))}
+        <div className="achievement-grid">
+          <div className="achievement-column">
+            <p className="section-kicker">Achievements</p>
+            {achievements.map((item, index) => (
+              <motion.article
+                key={item.id}
+                className="achievement-card"
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ delay: index * 0.05 }}
+              >
+                <div className="achievement-icon">
+                  <FaTrophy />
+                </div>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+
+          <div className="achievement-column">
+            <p className="section-kicker">Certifications</p>
+            {certificates.map((item, index) => (
+              <motion.article
+                key={item.id}
+                className="achievement-card"
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ delay: index * 0.05 + 0.08 }}
+              >
+                <div className="achievement-icon achievement-icon-secondary">
+                  <FaCertificate />
+                </div>
+                <div>
+                  <div className="achievement-head">
+                    <h3>{item.title}</h3>
+                    <span>{item.provider}</span>
+                  </div>
+                  <p>
+                    {item.link && item.link !== "#" ? (
+                      <a href={item.link} target="_blank" rel="noreferrer" className="achievement-link">
+                        View credential
+                        <FaArrowRight />
+                      </a>
+                    ) : (
+                      "Credential link not provided in the current portfolio data."
+                    )}
+                  </p>
+                </div>
+              </motion.article>
+            ))}
+          </div>
         </div>
       </div>
     </motion.section>

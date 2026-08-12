@@ -1,3 +1,4 @@
+import { MotionConfig } from "framer-motion";
 import { useEffect, useState } from "react";
 import LoadingScreen from "./components/LoadingScreen";
 import Navbar from "./components/Navbar";
@@ -8,8 +9,8 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
-import DanceSection from "./components/DanceSection";
-import ExtraCurricular from "./components/ExtraCurricular";
+import BeyondCode from "./components/BeyondCode";
+import Achievements from "./components/Achievements";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop";
@@ -30,23 +31,30 @@ function App() {
   }
 
   return (
-    <div className="app-shell">
-      <Navbar />
-      <BackToTop />
-      <main>
-        <Hero />
-        <About />
-        <WhatIBuild />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Education />
-        <DanceSection />
-        <ExtraCurricular />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <MotionConfig reducedMotion="user">
+      <div className="app-shell">
+        <div className="app-backdrop" aria-hidden="true">
+          <span className="app-backdrop-orb app-backdrop-orb-violet" />
+          <span className="app-backdrop-orb app-backdrop-orb-cyan" />
+          <span className="app-backdrop-orb app-backdrop-orb-pink" />
+        </div>
+        <Navbar />
+        <BackToTop />
+        <main className="app-main">
+          <Hero />
+          <About />
+          <WhatIBuild />
+          <Skills />
+          <Experience />
+          <Projects />
+          <Education />
+          <BeyondCode />
+          <Achievements />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </MotionConfig>
   );
 }
 

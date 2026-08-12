@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const navItems = [
@@ -8,12 +9,21 @@ const navItems = [
   { label: "Experience", href: "#experience", id: "experience" },
   { label: "Projects", href: "#projects", id: "projects" },
   { label: "Education", href: "#education", id: "education" },
+  { label: "Beyond Code", href: "#beyond-code", id: "beyond-code" },
   { label: "Contact", href: "#contact", id: "contact" },
 ];
 
 function Navbar() {
   const [menu, setMenu] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 24);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const sections = navItems
@@ -31,8 +41,8 @@ function Navbar() {
         }
       },
       {
-        rootMargin: "-30% 0px -55% 0px",
-        threshold: [0.15, 0.35, 0.6],
+        rootMargin: "-35% 0px -45% 0px",
+        threshold: [0.2, 0.4, 0.6],
       },
     );
 
@@ -42,13 +52,13 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className="reference-navbar" aria-label="Primary">
+    <nav className={`reference-navbar ${scrolled ? "reference-navbar-scrolled" : ""}`} aria-label="Primary">
       <div className="site-shell flex items-center justify-between px-5 py-4 sm:px-6 lg:px-8">
         <a href="#home" className="reference-brand">
-          Meghana
+          Meghana H M
         </a>
 
-        <div className="hidden items-center gap-6 text-sm font-medium text-slate-600 xl:flex">
+        <div className="hidden items-center gap-2 text-sm xl:flex">
           {navItems.map((item) => (
             <a
               key={item.href}
@@ -64,7 +74,7 @@ function Navbar() {
         <button
           type="button"
           onClick={() => setMenu((open) => !open)}
-          className="text-xl text-slate-700 xl:hidden"
+          className="navbar-toggle xl:hidden"
           aria-label="Toggle menu"
           aria-expanded={menu}
         >
@@ -72,23 +82,35 @@ function Navbar() {
         </button>
       </div>
 
-      {menu && (
-        <div className="border-t border-stone-200 bg-white px-5 py-4 xl:hidden">
-          <div className="flex flex-col gap-3 text-sm font-medium text-slate-600">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={() => setMenu(false)}
-                className={`rounded-xl px-3 py-2 transition hover:bg-slate-50 hover:text-slate-900 ${activeSection === item.id ? "bg-slate-100 text-slate-900" : ""}`}
-                aria-current={activeSection === item.id ? "page" : undefined}
-              >
-                {item.label}
-              </a>
-            ))}
-          </div>
-        </div>
-      )}
+      <AnimatePresence>
+        {menu && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.22 }}
+            className="navbar-mobile xl:hidden"
+          >
+            <div className="site-shell flex flex-col gap-2 px-5 pb-5 sm:px-6">
+              {navItems.map((item, index) => (
+                <motion.a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMenu(false)}
+                  initial={{ opacity: 0, x: -14 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -14 }}
+                  transition={{ delay: index * 0.03 }}
+                  className={`navbar-mobile-link ${activeSection === item.id ? "navbar-mobile-link-active" : ""}`}
+                  aria-current={activeSection === item.id ? "page" : undefined}
+                >
+                  {item.label}
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }

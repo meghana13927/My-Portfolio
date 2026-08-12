@@ -91,10 +91,10 @@ function Skills() {
   return (
     <motion.section
       id="skills"
-      className="section-shell px-5 py-16 sm:px-6 lg:px-8"
+      className="section-shell section-accent-violet px-5 py-16 sm:px-6 lg:px-8"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.16 }}
     >
       <div className="site-shell">
         <div className="skills-filter-shell">
@@ -129,7 +129,7 @@ function Skills() {
             </h2>
           </div>
           <p className="skills-reference-copy">
-            The complete technology stack I use across frontend engineering, backend development, design support, testing, and delivery.
+            The technology stack I use across frontend engineering, backend development, e-commerce work, testing, and design support.
           </p>
         </div>
 
@@ -141,13 +141,15 @@ function Skills() {
               <motion.article
                 key={`${skill.name}-${activeFilter}`}
                 initial={{ opacity: 0, y: 18 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.28, delay: index * 0.02 }}
+                whileHover={{ y: -6 }}
                 className="skills-reference-card"
               >
                 <span className="skills-reference-card-count">{String(index + 1).padStart(2, "0")}</span>
                 <div className="skills-reference-card-icon">
-                  <Icon className={`text-4xl ${skill.color}`} />
+                  <Icon className={`text-3xl ${skill.color}`} />
                 </div>
                 <p className="skills-reference-card-detail">{skill.detail}</p>
                 <h3>{skill.name}</h3>
