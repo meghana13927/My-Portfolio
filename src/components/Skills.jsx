@@ -1,158 +1,95 @@
-import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import skills from "../data/skills";
+import {
+  FaCode,
+  FaDatabase,
+  FaFigma,
+  FaLaptopCode,
+  FaServer,
+  FaTools,
+} from "react-icons/fa";
 
-const filterOrder = [
-  { id: "all", label: "All" },
-  { id: "languages", label: "Languages" },
-  { id: "frameworks", label: "Frameworks" },
-  { id: "ecommerce", label: "E-Commerce" },
-  { id: "design", label: "Design" },
-  { id: "tools", label: "Tools" },
+const skillGroups = [
+  {
+    title: "Programming",
+    icon: FaCode,
+    accent: "skills-card-purple",
+    items: ["Java", "JavaScript", "PHP", "Python"],
+  },
+  {
+    title: "Frontend",
+    icon: FaLaptopCode,
+    accent: "skills-card-blue",
+    items: ["HTML5", "CSS3", "React", "Tailwind CSS", "Bootstrap", "jQuery"],
+  },
+  {
+    title: "Backend",
+    icon: FaServer,
+    accent: "skills-card-pink",
+    items: ["Laravel", "CodeIgniter", "Node.js", "REST API", "GraphQL"],
+  },
+  {
+    title: "Database",
+    icon: FaDatabase,
+    accent: "skills-card-teal",
+    items: ["MySQL"],
+  },
+  {
+    title: "Tools & DevOps",
+    icon: FaTools,
+    accent: "skills-card-orange",
+    items: ["Git", "GitHub", "Postman", "Selenium", "Vite"],
+  },
+  {
+    title: "Design & Commerce",
+    icon: FaFigma,
+    accent: "skills-card-violet",
+    items: ["Figma", "Shopify"],
+  },
 ];
 
-const groupMap = {
-  HTML5: "all",
-  CSS3: "all",
-  React: "frameworks",
-  "Tailwind CSS": "frameworks",
-  Bootstrap: "frameworks",
-  jQuery: "frameworks",
-  Laravel: "frameworks",
-  CodeIgniter: "frameworks",
-  "Node.js": "frameworks",
-  "REST API": "tools",
-  GraphQL: "tools",
-  Shopify: "ecommerce",
-  MySQL: "languages",
-  JavaScript: "languages",
-  PHP: "languages",
-  Java: "languages",
-  Python: "languages",
-  Git: "tools",
-  GitHub: "tools",
-  Postman: "tools",
-  Figma: "design",
-  Selenium: "tools",
-  Vite: "tools",
-};
-
-const detailMap = {
-  HTML5: "Markup",
-  CSS3: "Styling",
-  React: "UI Library",
-  "Tailwind CSS": "CSS Framework",
-  Bootstrap: "UI Framework",
-  jQuery: "Frontend Library",
-  Laravel: "PHP Framework",
-  CodeIgniter: "Backend Framework",
-  "Node.js": "Runtime",
-  "REST API": "API Integration",
-  GraphQL: "API Query",
-  Shopify: "E-Commerce",
-  MySQL: "Database",
-  JavaScript: "Language",
-  PHP: "Language",
-  Java: "Programming",
-  Python: "Programming",
-  Git: "Version Control",
-  GitHub: "Code Hosting",
-  Postman: "API Tool",
-  Figma: "Design Tool",
-  Selenium: "Testing Tool",
-  Vite: "Build Tool",
-};
-
 function Skills() {
-  const [activeFilter, setActiveFilter] = useState("all");
-
-  const allSkills = useMemo(
-    () =>
-      skills.flatMap((category) =>
-        category.items.map((item) => ({
-          ...item,
-          category: groupMap[item.name] ?? "all",
-          detail: detailMap[item.name] ?? category.title,
-        })),
-      ),
-    [],
-  );
-
-  const filteredSkills = useMemo(() => {
-    if (activeFilter === "all") {
-      return allSkills;
-    }
-
-    return allSkills.filter((skill) => skill.category === activeFilter);
-  }, [activeFilter, allSkills]);
-
-  const activeIndex = filterOrder.findIndex((item) => item.id === activeFilter) + 1;
-
   return (
     <motion.section
       id="skills"
-      className="section-shell section-accent-violet px-5 py-16 sm:px-6 lg:px-8"
+      className="section-shell section-accent-skills px-5 py-16 sm:px-6 lg:px-8"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.16 }}
     >
       <div className="site-shell">
-        <div className="skills-filter-shell">
-          <p className="skills-filter-label">Filter By Discipline</p>
-
-          <div className="skills-filter-tabs" role="tablist" aria-label="Skill discipline filters">
-            {filterOrder.map((filter, index) => (
-              <button
-                key={filter.id}
-                type="button"
-                role="tab"
-                aria-selected={activeFilter === filter.id}
-                className={`skills-filter-tab ${activeFilter === filter.id ? "skills-filter-tab-active" : ""}`}
-                onClick={() => setActiveFilter(filter.id)}
-              >
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <strong>{filter.label}</strong>
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="skills-reference-header">
+        <div className="section-heading section-heading-split">
           <div>
-            <p className="skills-counter">
-              {String(activeIndex).padStart(2, "0")} / {String(filterOrder.length).padStart(2, "0")}
-            </p>
-            <h2 className="skills-reference-title">
-              {activeFilter === "all"
-                ? "All Skills"
-                : filterOrder.find((item) => item.id === activeFilter)?.label}
-            </h2>
+            <p className="section-eyebrow">Technical Skills</p>
+            <h2>Technologies and tools I use to build modern applications.</h2>
           </div>
-          <p className="skills-reference-copy">
-            The technology stack I use across frontend engineering, backend development, e-commerce work, testing, and design support.
+          <p className="section-support">
+            Six compact skill categories designed for quick recruiter scanning across programming, frontend, backend, data, tools, and commerce-oriented work.
           </p>
         </div>
 
-        <div className="skills-card-grid">
-          {filteredSkills.map((skill, index) => {
-            const Icon = skill.icon;
+        <div className="skills-six-grid">
+          {skillGroups.map((group, index) => {
+            const Icon = group.icon;
 
             return (
               <motion.article
-                key={`${skill.name}-${activeFilter}`}
-                initial={{ opacity: 0, y: 18 }}
+                key={group.title}
+                className={`skill-category-card ${group.accent}`}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.28, delay: index * 0.02 }}
-                whileHover={{ y: -6 }}
-                className="skills-reference-card"
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ delay: index * 0.05 }}
+                whileHover={{ y: -4 }}
               >
-                <span className="skills-reference-card-count">{String(index + 1).padStart(2, "0")}</span>
-                <div className="skills-reference-card-icon">
-                  <Icon className={`text-3xl ${skill.color}`} />
+                <div className="skill-category-icon">
+                  <Icon />
                 </div>
-                <p className="skills-reference-card-detail">{skill.detail}</p>
-                <h3>{skill.name}</h3>
+                <h3>{group.title}</h3>
+                <div className="skill-badge-row">
+                  {group.items.map((item) => (
+                    <span key={item}>{item}</span>
+                  ))}
+                </div>
               </motion.article>
             );
           })}
