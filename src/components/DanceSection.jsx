@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import danceArt from "../assets/images/image2.jpeg";
-import danceTeam from "../assets/images/image3.jpeg";
+import danceArt from "../assets/images/dance1.jfif";
+import danceTeam from "../assets/images/dance2.jpeg";
 
 const dancePoints = [
   "Member of the SDM Kalavaibhava team.",
