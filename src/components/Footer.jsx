@@ -30,7 +30,7 @@ function Footer() {
 
       <div className="site-shell footer-backlink-row">
         <a href="http://nvtitsolutions.com/" target="_blank" rel="noreferrer" className="footer-backlink">
-          Backlink: NVT IT Solutions
+          NVT IT Solutions
         </a>
       </div>
     </footer>
