@@ -30,25 +30,27 @@ function Navbar() {
       .map((item) => document.getElementById(item.id))
       .filter(Boolean);
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    const updateActiveSection = () => {
+      const scrollPosition = window.scrollY + 140;
+      let currentSection = "home";
 
-        if (visible?.target?.id) {
-          setActiveSection(visible.target.id);
+      sections.forEach((section) => {
+        if (section.offsetTop <= scrollPosition) {
+          currentSection = section.id;
         }
-      },
-      {
-        rootMargin: "-35% 0px -45% 0px",
-        threshold: [0.2, 0.4, 0.6],
-      },
-    );
+      });
 
-    sections.forEach((section) => observer.observe(section));
+      setActiveSection(currentSection);
+    };
 
-    return () => observer.disconnect();
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection);
+    window.addEventListener("resize", updateActiveSection);
+
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+    };
   }, []);
 
   return (
@@ -58,11 +60,12 @@ function Navbar() {
           Meghana H M
         </a>
 
-        <div className="hidden items-center gap-2 text-sm xl:flex">
+        <div className="hidden items-center gap-2 text-sm lg:flex">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
+              onClick={() => setActiveSection(item.id)}
               className={`reference-nav-link ${activeSection === item.id ? "reference-nav-link-active" : ""}`}
               aria-current={activeSection === item.id ? "page" : undefined}
             >
@@ -74,7 +77,7 @@ function Navbar() {
         <button
           type="button"
           onClick={() => setMenu((open) => !open)}
-          className="navbar-toggle xl:hidden"
+          className="navbar-toggle lg:hidden"
           aria-label="Toggle menu"
           aria-expanded={menu}
         >
@@ -89,14 +92,17 @@ function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.22 }}
-            className="navbar-mobile xl:hidden"
+            className="navbar-mobile lg:hidden"
           >
             <div className="site-shell flex flex-col gap-2 px-5 pb-5 sm:px-6">
               {navItems.map((item, index) => (
                 <motion.a
                   key={item.href}
                   href={item.href}
-                  onClick={() => setMenu(false)}
+                  onClick={() => {
+                    setActiveSection(item.id);
+                    setMenu(false);
+                  }}
                   initial={{ opacity: 0, x: -14 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -14 }}

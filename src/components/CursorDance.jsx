@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { FaBolt } from "react-icons/fa";
 
 function CursorDance() {
   const [enabled, setEnabled] = useState(false);
@@ -57,9 +56,6 @@ function CursorDance() {
     >
       <span className="cursor-dance-glow" />
       <span className="cursor-dance-icon">{"\uD83D\uDC83"}</span>
-      <span className="cursor-dance-bolt">
-        <FaBolt />
-      </span>
     </div>
   );
 }
