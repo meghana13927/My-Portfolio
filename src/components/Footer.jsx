@@ -27,6 +27,12 @@ function Footer() {
 
         <p className="footer-copy">© 2026 Meghana H M. All rights reserved.</p>
       </div>
+
+      <div className="site-shell footer-backlink-row">
+        <a href="http://nvtitsolutions.com/" target="_blank" rel="noreferrer" className="footer-backlink">
+          Backlink: NVT IT Solutions
+        </a>
+      </div>
     </footer>
   );
 }

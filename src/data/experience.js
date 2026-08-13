@@ -26,6 +26,15 @@ const experience = [
       "Building scalable backend features, API integrations, and responsive product flows with PHP, React, Shopify, MySQL, and GraphQL.",
     technologies: ["PHP", "React", "Shopify", "MySQL", "REST APIs", "GraphQL"],
   },
+  {
+    id: 4,
+    company: "Web2Apps",
+    role: "Full Stack Engineer",
+    duration: "Part-time",
+    description:
+      "Working as a Full Stack Engineer in a part-time role.",
+    technologies: [],
+  },
 ];
 
 export default experience;

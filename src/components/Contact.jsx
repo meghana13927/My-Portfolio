@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   FaEnvelope,
@@ -36,6 +37,58 @@ const contactItems = [
 ];
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    interest: "",
+    country: "",
+    message: "",
+  });
+
+  const [formMessage, setFormMessage] = useState("");
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((current) => ({
+      ...current,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const { name, email, phone, interest, country, message } = formData;
+
+    if (!name || !email || !phone || !interest || !country || !message) {
+      setFormMessage("Please fill in all required fields before submitting.");
+      return;
+    }
+
+    const subject = encodeURIComponent(`${interest} enquiry from ${name}`);
+    const body = encodeURIComponent(
+      [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Phone: ${phone}`,
+        `Interested In: ${interest}`,
+        `Country: ${country}`,
+        "",
+        "Message:",
+        message,
+      ].join("\n"),
+    );
+
+    window.open(
+      `https://mail.google.com/mail/?view=cm&fs=1&to=meghameghana370@gmail.com&su=${subject}&body=${body}`,
+      "_blank",
+      "noopener,noreferrer",
+    );
+
+    setFormMessage("Your enquiry draft has been opened in Gmail.");
+  };
+
   return (
     <motion.section
       id="contact"
@@ -110,29 +163,56 @@ function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
           >
-            <form className="contact-form-grid" onSubmit={(event) => event.preventDefault()}>
+            <form className="contact-form-grid" onSubmit={handleSubmit}>
               <label className="contact-field">
                 <span>Your name *</span>
-                <input type="text" placeholder="Enter your name" aria-label="Your name" />
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Enter your name"
+                  aria-label="Your name"
+                />
               </label>
 
               <label className="contact-field">
                 <span>Email *</span>
-                <input type="email" placeholder="you@company.com" aria-label="Email" />
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="you@company.com"
+                  aria-label="Email"
+                />
               </label>
 
               <label className="contact-field">
                 <span>Phone *</span>
-                <input type="tel" placeholder="Enter phone number" aria-label="Phone number" />
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="Enter phone number"
+                  aria-label="Phone number"
+                />
               </label>
 
               <label className="contact-field">
                 <span>I&apos;m interested in *</span>
-                <select defaultValue="" aria-label="Interest area">
+                <select
+                  name="interest"
+                  value={formData.interest}
+                  onChange={handleChange}
+                  aria-label="Interest area"
+                >
                   <option value="" disabled>
                     Select a service
                   </option>
                   <option value="software-developer-role">Software Developer Role</option>
+                  <option value="shopify-developer-role">Shopify Developer Role</option>
                   <option value="frontend-project">Frontend Project</option>
                   <option value="full-stack-project">Full-Stack Project</option>
                   <option value="react-work">React Development</option>
@@ -142,22 +222,36 @@ function Contact() {
 
               <label className="contact-field contact-field-full">
                 <span>Country *</span>
-                <input type="text" placeholder="Enter your country" aria-label="Country" />
+                <input
+                  type="text"
+                  name="country"
+                  value={formData.country}
+                  onChange={handleChange}
+                  placeholder="Enter your country"
+                  aria-label="Country"
+                />
               </label>
 
               <label className="contact-field contact-field-full">
                 <span>Your message *</span>
-                <textarea rows="7" placeholder="Tell me about your project, role, or idea..." aria-label="Your message" />
+                <textarea
+                  rows="7"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Tell me about your project, role, or idea..."
+                  aria-label="Your message"
+                />
               </label>
 
               <div className="contact-form-footer">
-                <button type="button" className="contact-submit">
+                <button type="submit" className="contact-submit">
                   <span>Submit enquiry</span>
                   <span className="contact-submit-icon">
                     <FaRegArrowAltCircleRight />
                   </span>
                 </button>
-                <p>Your enquiry is sent directly to my inbox. No email application opens.</p>
+                <p>{formMessage || "Your enquiry opens as a Gmail draft in the browser."}</p>
               </div>
             </form>
           </motion.div>

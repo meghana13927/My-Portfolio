@@ -13,6 +13,7 @@ import BeyondCode from "./components/BeyondCode";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop";
+import CursorDance from "./components/CursorDance";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -37,6 +38,7 @@ function App() {
           <span className="app-backdrop-orb app-backdrop-orb-cyan" />
           <span className="app-backdrop-orb app-backdrop-orb-pink" />
         </div>
+        <CursorDance />
         <Navbar />
         <BackToTop />
         <main className="app-main">
