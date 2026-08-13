@@ -2,20 +2,20 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #ffffff;
-  --bg-soft: #f8fafc;
-  --surface: #ffffff;
-  --surface-alt: #f8fafc;
-  --border: #e2e8f0;
-  --border-strong: #cbd5e1;
-  --heading: #111827;
-  --text: #334155;
-  --muted: #64748b;
-  --shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
-  --shadow-hover: 0 24px 50px rgba(15, 23, 42, 0.12);
-  --gradient-primary: linear-gradient(135deg, #7c3aed 0%, #2563eb 55%, #06b6d4 100%);
-  --gradient-secondary: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
-  --gradient-warm: linear-gradient(135deg, #f97316 0%, #ec4899 100%);
+  --bg: #eef3f8;
+  --bg-soft: #e4ebf3;
+  --surface: #f9fbfd;
+  --surface-alt: #edf3f8;
+  --border: #d4dee8;
+  --border-strong: #b8c8d8;
+  --heading: #243646;
+  --text: #465c70;
+  --muted: #6f8294;
+  --shadow: 0 18px 40px rgba(59, 78, 97, 0.1);
+  --shadow-hover: 0 24px 50px rgba(59, 78, 97, 0.15);
+  --gradient-primary: linear-gradient(135deg, #4b5f73 0%, #5b7b96 48%, #7aa0bf 100%);
+  --gradient-secondary: linear-gradient(135deg, #617a90 0%, #7b96af 100%);
+  --gradient-warm: linear-gradient(135deg, #687d91 0%, #8ea6bd 100%);
 }
 
 html {
@@ -29,9 +29,9 @@ body {
   color: var(--text);
   font-family: "Instrument Sans", sans-serif;
   background:
-    radial-gradient(circle at 10% 10%, rgba(124, 58, 237, 0.08), transparent 24%),
-    radial-gradient(circle at 90% 12%, rgba(6, 182, 212, 0.07), transparent 24%),
-    linear-gradient(180deg, #ffffff 0%, #fcfdff 100%);
+    radial-gradient(circle at 10% 10%, rgba(91, 123, 150, 0.12), transparent 24%),
+    radial-gradient(circle at 90% 12%, rgba(122, 160, 191, 0.1), transparent 24%),
+    linear-gradient(180deg, #eef3f8 0%, #f7fafc 100%);
 }
 
 * {
@@ -55,7 +55,7 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid #5b7b96;
   outline-offset: 3px;
 }
 
@@ -80,8 +80,8 @@ p {
 }
 
 ::selection {
-  background: rgba(99, 102, 241, 0.14);
-  color: #111827;
+  background: rgba(91, 123, 150, 0.18);
+  color: #243646;
 }
 
 .app-shell {
@@ -127,7 +127,7 @@ p {
   left: -5rem;
   width: 20rem;
   height: 20rem;
-  background: rgba(139, 92, 246, 0.45);
+  background: rgba(91, 123, 150, 0.32);
 }
 
 .app-backdrop-orb-cyan {
@@ -135,7 +135,7 @@ p {
   right: -5rem;
   width: 18rem;
   height: 18rem;
-  background: rgba(34, 211, 238, 0.28);
+  background: rgba(122, 160, 191, 0.24);
 }
 
 .app-backdrop-orb-pink {
@@ -143,7 +143,7 @@ p {
   left: 42%;
   width: 18rem;
   height: 18rem;
-  background: rgba(244, 114, 182, 0.18);
+  background: rgba(115, 135, 154, 0.18);
 }
 
 .site-shell {
@@ -171,19 +171,19 @@ p {
 
 .section-accent-hero::before,
 .section-accent-contact::before {
-  background: rgba(99, 102, 241, 0.38);
+  background: rgba(91, 123, 150, 0.28);
 }
 
 .section-accent-cyan::before {
-  background: rgba(6, 182, 212, 0.24);
+  background: rgba(122, 160, 191, 0.2);
 }
 
 .section-accent-skills::before {
-  background: rgba(139, 92, 246, 0.2);
+  background: rgba(97, 122, 144, 0.18);
 }
 
 .section-accent-beyond::before {
-  background: rgba(236, 72, 153, 0.2);
+  background: rgba(142, 166, 189, 0.18);
 }
 
 .section-heading {
@@ -202,7 +202,7 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  color: #6366f1;
+  color: #5b7b96;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.22em;
@@ -277,8 +277,8 @@ p {
 .build-card h3:hover,
 .skill-category-card h3:hover {
   transform: translateY(-2px);
-  color: #0f172a;
-  text-shadow: 0 10px 22px rgba(37, 99, 235, 0.1);
+  color: #243646;
+  text-shadow: 0 10px 22px rgba(91, 123, 150, 0.12);
 }
 
 .section-heading h2:hover::after,
@@ -326,7 +326,7 @@ p {
 .button-primary {
   color: #fff;
   background: var(--gradient-primary);
-  box-shadow: 0 14px 24px rgba(99, 102, 241, 0.18);
+  box-shadow: 0 14px 24px rgba(91, 123, 150, 0.18);
 }
 
 .button-secondary {
@@ -345,8 +345,8 @@ p {
 }
 
 .button-secondary:hover {
-  border-color: #a5b4fc;
-  box-shadow: 0 14px 24px rgba(99, 102, 241, 0.08);
+  border-color: #8ea6bd;
+  box-shadow: 0 14px 24px rgba(91, 123, 150, 0.1);
 }
 
 .reference-navbar {
@@ -398,8 +398,8 @@ p {
 
 .reference-nav-link:hover,
 .reference-nav-link-active {
-  color: #111827;
-  background: rgba(99, 102, 241, 0.06);
+  color: #243646;
+  background: rgba(91, 123, 150, 0.08);
 }
 
 .reference-nav-link:hover::after,
